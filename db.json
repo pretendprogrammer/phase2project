@@ -3,7 +3,9 @@
         {
           "id": 1,
           "title": "Tinder",
+          "image": "https://i.pcmag.com/imagery/reviews/02ibIXDUJNJ3V7KL8jhUNFf-7.1569480464.fit_scale.size_1028x578.png",
           "developer": "Tinder Inc.",
+          "description": "We're here to get you laid.",
           "programCategories": ["Dating"],
           "rating": 1,
           "comparisonsRef": [1,2]
@@ -11,7 +13,9 @@
         {
           "id": 2,
           "title": "Bumble",
+          "image": "https://i.pcmag.com/imagery/reviews/014Qlx0F7XvLzMxHFRR7CEo-11.1569476635.fit_scale.size_1028x578.jpg",
           "developer": "Bumble Holding Limited",
+          "description": "Ladies first.",
           "programCategories": ["Dating"],
           "rating": 1,
           "comparisonsRef": [1]
@@ -19,7 +23,9 @@
         {
         "id": 3,
         "title": "OkCupid",
+        "image": "https://i.pcmag.com/imagery/reviews/049AUNiOE3A6ATMl0BxYfCj-7.1569482590.fit_scale.size_1028x578.jpg",
         "developer": "OkCupid",
+        "description": "We know you better than you.",
         "programCategories": ["Dating"],
         "rating": 1,
         "comparisonsRef": [2]
@@ -29,6 +35,7 @@
         {
           "id": 1,
           "userId": 1,
+          "rating": 1,
           "categories": ["Ease of Use"],
           "comparison": [
             {
@@ -44,6 +51,7 @@
         {
           "id": 2,
           "userId": 2,
+          "rating": 1,
           "categories": ["Reliability"],
           "comparison": [
             {
