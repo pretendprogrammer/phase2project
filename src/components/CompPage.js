@@ -1,6 +1,6 @@
 import { Component } from "react"
 import CardContainer from './CardContainer'
-import CompContainer from "./CompContainer"
+import ExpandedInfo from "./ExpandedInfo"
 
 const API = 'http://localhost:3000/'
 
@@ -18,6 +18,7 @@ class CompPage extends Component {
         .then(programsList => this.setState({programsList}))
     }
 
+    // THIS FUNCTION IS PASSED DOWN TO EACH PROGRAM CARD TO ADD IT TO THE STATE IN THIS SCOPE
     addToSelectedPrograms = (programObject) => {
         if (this.state.selectedPrograms.length === 2) {
             this.setState({selectedPrograms: this.state.selectedPrograms.shift()})
@@ -30,7 +31,7 @@ class CompPage extends Component {
     render() {
         return (
             <div>
-                <CompContainer selectedPrograms={this.state.selectedPrograms}/>
+                <ExpandedInfo selectedPrograms={this.state.selectedPrograms}/>
                 <CardContainer addToSelectedPrograms={this.addToSelectedPrograms} programsList={this.state.programsList}/>
             </div>
         )
