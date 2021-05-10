@@ -1,0 +1,71 @@
+{
+    "programs": [
+        {
+          "id": 1,
+          "title": "Tinder",
+          "developer": "Tinder Inc.",
+          "programCategories": ["Dating"],
+          "rating": 1,
+          "comparisonsRef": [1,2]
+        },
+        {
+          "id": 2,
+          "title": "Bumble",
+          "developer": "Bumble Holding Limited",
+          "programCategories": ["Dating"],
+          "rating": 1,
+          "comparisonsRef": [1]
+        },
+        {
+        "id": 3,
+        "title": "OkCupid",
+        "developer": "OkCupid",
+        "programCategories": ["Dating"],
+        "rating": 1,
+        "comparisonsRef": [2]
+        }
+    ],
+    "comparisons": [
+        {
+          "id": 1,
+          "userId": 1,
+          "categories": ["Ease of Use"],
+          "comparison": [
+            {
+              "programId": 1,
+              "text": "Simple and straight-forward."
+            },
+            {
+              "programId": 2,
+              "text": "Way too many complicated features."
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "userId": 2,
+          "categories": ["Reliability"],
+          "comparison": [
+            {
+              "programId": 1,
+              "text": "I've never encountered a single bug."
+            },
+            {
+              "programId": 3,
+              "text": "Crashed at least once a day."
+            }
+          ]
+        }
+    ],
+    "users": [
+      {
+        "id": 1,
+        "username": "Nick M"
+      },
+      {
+        "id": 2,
+        "username": "Yosef A"
+      }
+    ]
+  }
+  
