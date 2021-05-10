@@ -1,21 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './App.css';
+import CompPage from './components/CompPage'
 
-class App extends Component{
-
-  state = {
-    user: 'no user'
-  }
-
-  render() {
-    return (
-      <div>
-        Hello
-       {/* NavBar */}
-       {/* ComparisonContainer */}
-       {/* ProgramCardsContainer */}
+const App = () =>  (
+      <div className='App'>
+       <CompPage />
       </div>
-    )
-  }
-}
+)
 export default App;
