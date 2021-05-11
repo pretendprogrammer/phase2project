@@ -2,24 +2,23 @@ import React, { useEffect, useState } from 'react'
 import Comparisons from './Comparisons'
 
 const CompContainer = (props) => {
-    console.log(props.selectedPrograms)
 
     const API = 'http://localhost:3000/'
     const [compsToDisplay, setCompsToDisplay] = useState([])
     let matchedComparisonIds = []
 
     useEffect(() => {
-        console.log("id's are: "+matchedComparisonIds)
         if (matchedComparisonIds.length > 0) {
             fetch(API+'comparisons')
             .then(r => r.json())
             .then(result => {
-                matchedComparisonIds.forEach(id => {
-                    let newValue = []
-                    newValue.push(result[id-1].comparison[0])
-                    newValue.push(result[id-1].comparison[1])
-                    setCompsToDisplay(newValue)
+                result = result.filter(compObject => matchedComparisonIds.some(id => id === compObject.id))
+                let newValue = []
+                result.forEach(object => {
+                    newValue.push(object.comparison[0])
+                    newValue.push(object.comparison[1])
                 })
+                setCompsToDisplay(newValue)
             })
         }
     }, [props.selectedPrograms])

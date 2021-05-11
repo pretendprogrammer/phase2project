@@ -8,7 +8,7 @@
           "description": "We're here to get you laid.",
           "programCategories": ["Dating"],
           "rating": 1,
-          "comparisonsRef": [1,2]
+          "comparisonsRef": [1,2,3]
         },
         {
           "id": 2,
@@ -18,7 +18,7 @@
           "description": "Ladies first.",
           "programCategories": ["Dating"],
           "rating": 1,
-          "comparisonsRef": [1]
+          "comparisonsRef": [1,3]
         },
         {
         "id": 3,
@@ -45,6 +45,22 @@
             {
               "id": 2,
               "text": "Way too many complicated features. -bumble"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "userId": 1,
+          "rating": 1,
+          "categories": ["Ease of Use"],
+          "comparison": [
+            {
+              "id": 1,
+              "text": "Old and cliche. -tinder"
+            },
+            {
+              "id": 2,
+              "text": "New and exciting. -bumble"
             }
           ]
         },

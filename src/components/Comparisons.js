@@ -2,7 +2,6 @@ import React from 'react'
 
 const Comparisons = (props) => {
     let textToShow = props.compsToDisplay.filter(comp => comp.id === props.programId)
-    console.log(textToShow)
     return (
         <div>
             {textToShow.map(comp => (
