@@ -1,38 +1,45 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Comparisons from './Comparisons'
 
 const CompContainer = (props) => {
+    console.log(props.selectedPrograms)
 
     const API = 'http://localhost:3000/'
-    let compsToDisplay = []
+    const [compsToDisplay, setCompsToDisplay] = useState([])
+    let matchedComparisonIds = []
 
-    let currentComparisons = []
-    if (props.selectedPrograms.length === 2) {
-        props.selectedPrograms[0].comparisonsRef.forEach(refId => {
-            if (props.selectedPrograms[1].comparisonsRef.includes(refId)) {
-                currentComparisons.push(refId)
-            }
-        })
-        if (currentComparisons.length > 0) {
+    useEffect(() => {
+        console.log("id's are: "+matchedComparisonIds)
+        if (matchedComparisonIds.length > 0) {
             fetch(API+'comparisons')
             .then(r => r.json())
             .then(result => {
-                console.log(currentComparisons.length)
-                currentComparisons.forEach(id => compsToDisplay.push(result[id-1].comparison))
-                console.log(compsToDisplay)
-                return(
-                    <div>
-                        <Comparisons programId={props.selectedPrograms[0].id} compsToDisplay={compsToDisplay}/>
-                        <Comparisons programId={props.selectedPrograms[1].id} compsToDisplay={compsToDisplay}/>
-                    </div>
-                )
+                matchedComparisonIds.forEach(id => {
+                    let newValue = [...compsToDisplay]
+                    newValue.push(result[id-1].comparison[0])
+                    newValue.push(result[id-1].comparison[1])
+                    setCompsToDisplay(newValue)
+                })
             })
-        } else {
-            return (null)
         }
+    }, [props.selectedPrograms])
+    props.selectedPrograms[0].comparisonsRef.forEach(refId => {
+        if (props.selectedPrograms[1].comparisonsRef.includes(refId)) {
+            matchedComparisonIds.push(refId)
+        }
+    })
+    if (matchedComparisonIds.length > 0) {
+        return (
+            <div>
+                {console.log("I'm returning")}
+                <Comparisons programId={props.selectedPrograms[0].id} compsToDisplay={compsToDisplay}/>
+                <Comparisons programId={props.selectedPrograms[1].id} compsToDisplay={compsToDisplay}/>
+            </div>
+        )
     } else {
-        return (null)
+        return (<h1>No Comparisons Currently. Please Add Your Own.</h1>)
     }
+   
     
 }
 

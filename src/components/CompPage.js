@@ -9,7 +9,8 @@ class CompPage extends Component {
     state = {
         user: 'no user',
         programsList: [],
-        selectedPrograms: []
+        selectedPrograms: [],
+        compsToDisplay: []
     }
 
     componentDidMount() {
@@ -31,7 +32,7 @@ class CompPage extends Component {
     render() {
         return (
             <div>
-                <ExpandedInfo selectedPrograms={this.state.selectedPrograms}/>
+                <ExpandedInfo compsToDisplay={this.state.compsToDisplay} selectedPrograms={this.state.selectedPrograms}/>
                 <CardContainer addToSelectedPrograms={this.addToSelectedPrograms} programsList={this.state.programsList}/>
             </div>
         )

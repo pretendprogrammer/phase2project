@@ -40,11 +40,11 @@
           "comparison": [
             {
               "id": 1,
-              "text": "Simple and straight-forward."
+              "text": "Simple and straight-forward. -tinder"
             },
             {
               "id": 2,
-              "text": "Way too many complicated features."
+              "text": "Way too many complicated features. -bumble"
             }
           ]
         },
@@ -56,11 +56,11 @@
           "comparison": [
             {
               "id": 1,
-              "text": "I've never encountered a single bug."
+              "text": "I've never encountered a single bug. -tinder"
             },
             {
               "id": 3,
-              "text": "Crashed at least once a day."
+              "text": "Crashed at least once a day. -okcupid"
             }
           ]
         }
