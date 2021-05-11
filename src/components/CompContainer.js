@@ -15,7 +15,7 @@ const CompContainer = (props) => {
             .then(r => r.json())
             .then(result => {
                 matchedComparisonIds.forEach(id => {
-                    let newValue = [...compsToDisplay]
+                    let newValue = []
                     newValue.push(result[id-1].comparison[0])
                     newValue.push(result[id-1].comparison[1])
                     setCompsToDisplay(newValue)
@@ -26,12 +26,12 @@ const CompContainer = (props) => {
     props.selectedPrograms[0].comparisonsRef.forEach(refId => {
         if (props.selectedPrograms[1].comparisonsRef.includes(refId)) {
             matchedComparisonIds.push(refId)
+            
         }
     })
     if (matchedComparisonIds.length > 0) {
         return (
             <div>
-                {console.log("I'm returning")}
                 <Comparisons programId={props.selectedPrograms[0].id} compsToDisplay={compsToDisplay}/>
                 <Comparisons programId={props.selectedPrograms[1].id} compsToDisplay={compsToDisplay}/>
             </div>
