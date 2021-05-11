@@ -45,6 +45,7 @@ class CompPage extends Component {
         return (
             <div>
                 <NavBar setFilter={this.setFilter} setUser={this.setUser} user={this.state.user} filter={this.state.filter}/>
+                <NewProgram />
                 <ExpandedInfo selectedPrograms={this.state.selectedPrograms}/>
                 <CardContainer addToSelectedPrograms={this.addToSelectedPrograms} programsList={this.state.programsList}/>
             </div>
