@@ -1,13 +1,30 @@
 import React from 'react'
+import { Card, Feed } from 'semantic-ui-react'
 
 const Comparisons = (props) => {
     let textToShow = props.compsToDisplay.filter(comp => comp.id === props.programId)
     return (
-        <div>
+        <Card>
+            <Card.Content>
+                <Card.Header>Reviews</Card.Header>
+            </Card.Content>
             {textToShow.map(comp => (
-                <h3>{comp.text}</h3>
+                <Card.Content>
+                    <Feed>
+                        <Feed.Event>
+                            <Feed.Label>
+                                "User"
+                            </Feed.Label>
+                            <Feed.Content>
+                                <Feed.Summary>
+                                    {comp.text}
+                                </Feed.Summary>
+                            </Feed.Content>
+                        </Feed.Event>
+                    </Feed>    
+                </Card.Content>
             ))}
-        </div>
+        </Card>
     )
 }
 

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Card } from 'semantic-ui-react'
 import Comparisons from './Comparisons'
 
 const CompContainer = (props) => {
@@ -30,10 +31,10 @@ const CompContainer = (props) => {
     })
     if (matchedComparisonIds.length > 0) {
         return (
-            <div>
-                <Comparisons programId={props.selectedPrograms[0].id} compsToDisplay={compsToDisplay}/>
-                <Comparisons programId={props.selectedPrograms[1].id} compsToDisplay={compsToDisplay}/>
-            </div>
+            <Card.Group itemsPerRow={2}>
+                    <Comparisons programId={props.selectedPrograms[0].id} compsToDisplay={compsToDisplay}/>
+                    <Comparisons programId={props.selectedPrograms[1].id} compsToDisplay={compsToDisplay}/>
+            </Card.Group>
         )
     } else {
         return (<h1>No Comparisons Currently. Please Add Your Own.</h1>)
