@@ -1,7 +1,6 @@
 {
   "programs": [
     {
-      "id": 1,
       "title": "Tinder",
       "image": "https://i.pcmag.com/imagery/reviews/02ibIXDUJNJ3V7KL8jhUNFf-7.1569480464.fit_scale.size_1028x578.png",
       "developer": "Tinder Inc.",
@@ -9,7 +8,7 @@
       "programCategories": [
         "Dating"
       ],
-      "rating": 1,
+      "rating": 0,
       "comparisonsRef": [
         1,
         2,
@@ -17,10 +16,10 @@
         5,
         6,
         7
-      ]
+      ],
+      "id": 1
     },
     {
-      "id": 2,
       "title": "Bumble",
       "image": "https://i.pcmag.com/imagery/reviews/014Qlx0F7XvLzMxHFRR7CEo-11.1569476635.fit_scale.size_1028x578.jpg",
       "developer": "Bumble Holding Limited",
@@ -28,17 +27,17 @@
       "programCategories": [
         "Dating"
       ],
-      "rating": 1,
+      "rating": 0,
       "comparisonsRef": [
         1,
         3,
         4,
         6,
         7
-      ]
+      ],
+      "id": 2
     },
     {
-      "id": 3,
       "title": "OkCupid",
       "image": "https://i.pcmag.com/imagery/reviews/049AUNiOE3A6ATMl0BxYfCj-7.1569482590.fit_scale.size_1028x578.jpg",
       "developer": "OkCupid",
@@ -46,24 +45,179 @@
       "programCategories": [
         "Dating"
       ],
-      "rating": 1,
+      "rating": 0,
       "comparisonsRef": [
         2,
         4,
         5
-      ]
+      ],
+      "id": 3
     },
     {
       "title": "VLC",
-      "image": "https://cdn.iconscout.com/icon/free/png-512/vlc-media-player-2-569258.png",
+      "image": "https://play-lh.googleusercontent.com/nPnJc260PPoupBe-DcVQ-MNr6149dphdEoEAN-C9xwgctpVXbwsuyon_jEZ3uPWWYQ=s180-rw",
       "developer": "VLC",
       "description": "media player",
       "programCategories": [
         "Multimedia"
       ],
-      "rating": null,
-      "comparisonsRef": [],
+      "rating": 3,
+      "comparisonsRef": [
+        9,
+        10
+      ],
       "id": 4
+    },
+    {
+      "title": "Real Racing",
+      "image": "https://play-lh.googleusercontent.com/SEvnk_k8ZSoghYh9dEIinzWPbBhd8_wkxdUupbpfq5h7KWf2gKm0gOGtQ4mxWmEsqic=s180-rw",
+      "developer": "Electronic Arts",
+      "description": "Real Racing 3 is the award-winning franchise that sets a new standard for mobile racing games.",
+      "programCategories": [
+        "Games"
+      ],
+      "rating": 0,
+      "comparisonsRef": [
+        8
+      ],
+      "id": 5
+    },
+    {
+      "title": "Hill Climb Racing",
+      "image": "https://play-lh.googleusercontent.com/N0UxhBVUmx8s7y3F7Kqre2AcpXyPDKAp8nHjiPPoOONc_sfugHCYMjBpbUKCMlK_XUs=s180-rw",
+      "developer": "Fingersoft",
+      "description": "Meet Newton Bill, the young aspiring uphill racer. He is about to embark on a journey that takes him to where no ride has ever been before.",
+      "programCategories": [
+        "Games"
+      ],
+      "rating": 0,
+      "comparisonsRef": [
+        8
+      ],
+      "id": 6
+    },
+    {
+      "title": "Robinhood",
+      "image": "https://play-lh.googleusercontent.com/9ORr_F5ji8mNCbudihKiRS20ZJ4sQ4ACvOucKJ6UziAu9DFaF6iGx_JmTS_XsnSPZw=s180-rw",
+      "developer": "Robinhood",
+      "description": "Invest in stocks, options, and funds with Robinhood Financial.",
+      "programCategories": [
+        "Finance"
+      ],
+      "rating": 0,
+      "comparisonsRef": [],
+      "id": 7
+    },
+    {
+      "title": "Stash",
+      "image": "https://play-lh.googleusercontent.com/73-DI2anvTkFjXk5YeIRZf4qxUgIUWeUwRRA-cjtDQc_NyyNkGkPw2TaAEIYbBtz8fs=s180-rw",
+      "developer": "Stash Financial",
+      "description": "Stash is the personal finance app designed to help you achieve more financial freedom.",
+      "programCategories": [
+        "Finance"
+      ],
+      "rating": 0,
+      "comparisonsRef": [],
+      "id": 8
+    },
+    {
+      "title": "KMPlayer",
+      "image": "https://play-lh.googleusercontent.com/c50C3ph3Sm4u4NtSzp1f5dp4_-8KOy-Xj0fMKnI9noJ5Q0s9XKzElgDXgMZ-_5Il7Usq=s180-rw",
+      "developer": "PANDORA.TV",
+      "description": "KMPlayer is the perfect playback tool that can play all types of subtitles and video.",
+      "programCategories": [
+        "Multimedia"
+      ],
+      "rating": 3,
+      "comparisonsRef": [
+        9,
+        10
+      ],
+      "id": 9
+    },
+    {
+      "title": "Hinge",
+      "image": "https://play-lh.googleusercontent.com/5P5svqXNCWqE0NtHSV91pl2YUGKJ2aitjaUWIVZd-65AtskDVO2o9bpYx1oAV9fr0-nt=s180-rw",
+      "developer": "Hinge",
+      "description": "Hinge is the dating app for people who want to get off dating apps.",
+      "programCategories": [
+        "Dating"
+      ],
+      "rating": 0,
+      "comparisonsRef": [],
+      "id": 10
+    },
+    {
+      "title": "Match",
+      "image": "https://play-lh.googleusercontent.com/y6iCFBHUmbKyptLeu6d6QGwbMDIAYKM3zrkIMTjS88ot2v630Hu3bIXH1GLxGkz470e1=s180-rw",
+      "developer": "Match.com LLC",
+      "description": "Match is raising dating to your level. Because let’s face it: there’s only so much left-right thumb gymnastics you can do when you’re ready for something more.",
+      "programCategories": [
+        "Dating"
+      ],
+      "rating": 0,
+      "comparisonsRef": [],
+      "id": 11
+    },
+    {
+      "title": "FarmersOnly Dating",
+      "image": "https://play-lh.googleusercontent.com/ul9MBbzCCD6BQRCcQmxwIrgvGuTV8650-Tjhyis4IIOxoJzHAE-Xt1zasSzpwHu35VI=s180-rw",
+      "developer": "FarmersOnly.com",
+      "description": "We started FarmersOnly.com in 2005 because, the way we see it, there are basically two groups in America. Group one revolves around five dollar lattés, riding in ubers, and getting ahead at all costs in the corporate world. If you fall into this group, FarmersOnly is not where you want to be dating online.",
+      "programCategories": [
+        "Dating"
+      ],
+      "rating": 0,
+      "comparisonsRef": [],
+      "id": 12
+    },
+    {
+      "title": "Grindr",
+      "image": "https://play-lh.googleusercontent.com/8sTpBWyCCpQGdsrTu_NLRQLwt4zibVidrYeCcEWiVwGRHdhcnwIg_ZicU2XlD9UfxW4=s180-rw",
+      "developer": "Grindr LLC",
+      "description": "Grindr is the world’s #1 FREE mobile social networking app for gay, bi, trans, and queer people to connect.",
+      "programCategories": [
+        "Dating"
+      ],
+      "rating": 0,
+      "comparisonsRef": [],
+      "id": 13
+    },
+    {
+      "title": "Christian Mingle",
+      "image": "https://play-lh.googleusercontent.com/50MVXvkM9_GqxJXz1ATxhL4Gn4VBsq4L3c43zP_AuOzhpwxcrJ_f-IOK_QZgZLfdUkU=s180-rw",
+      "developer": "Spark Networks SE",
+      "description": "What sets Christian Mingle apart from other free dating apps is our success in bringing singles together: Our ability to make meaningful connections has made hundreds of thousands of relationships possible for over 15 years!",
+      "programCategories": [
+        "Dating"
+      ],
+      "rating": 0,
+      "comparisonsRef": [],
+      "id": 14
+    },
+    {
+      "title": "JSwipe",
+      "image": "https://play-lh.googleusercontent.com/OSphnWXFnEn5lLID0GWg7A7kKvPw6C7JJcNDRYh7hcdXyFxiQIihDlf-dz9iKOT5-N8=s180-rw",
+      "developer": "Smooch Labs",
+      "description": "Shalom! Welcome to JSwipe - the Jewish dating app with over 1 million users worldwide. Swipe right, match, and message with local Jewish singles in your area for free.",
+      "programCategories": [
+        "Dating"
+      ],
+      "rating": 0,
+      "comparisonsRef": [],
+      "id": 15
+    },
+    {
+      "title": "Sugar Momma Dating",
+      "image": "https://play-lh.googleusercontent.com/KuWZU2zG8MUr-9fGtzlPdMZVv4PwljRN6KtoZKAqex_2MoYD8E0N41_910MtjhdvNMI=s180-rw",
+      "developer": "Hookup Apps - Sugar Momma Cougar Dating Old WomenDating",
+      "description": "Sugar Momma Dating Cougar Dating For Hookup - Luck is a friend making app for adult singles, which is suitable for finding casual relationships, flirtre and meet local singles.",
+      "programCategories": [
+        "Dating"
+      ],
+      "rating": 0,
+      "comparisonsRef": [],
+      "id": 16
     }
   ],
   "comparisons": [
@@ -188,6 +342,57 @@
         }
       ],
       "id": 7
+    },
+    {
+      "rating": null,
+      "categories": [
+        "Ease of Use"
+      ],
+      "comparison": [
+        {
+          "id": 5,
+          "text": "Takes a crap-ton of space"
+        },
+        {
+          "id": 6,
+          "text": "Less than 100 mb"
+        }
+      ],
+      "id": 8
+    },
+    {
+      "rating": null,
+      "categories": [
+        "Reliability"
+      ],
+      "comparison": [
+        {
+          "id": 4,
+          "text": "crashed literally all the time"
+        },
+        {
+          "id": 9,
+          "text": "never used it"
+        }
+      ],
+      "id": 9
+    },
+    {
+      "rating": null,
+      "categories": [
+        "Reliability"
+      ],
+      "comparison": [
+        {
+          "id": 4,
+          "text": "crashed"
+        },
+        {
+          "id": 9,
+          "text": "no idea"
+        }
+      ],
+      "id": 10
     }
   ],
   "users": [

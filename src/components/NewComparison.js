@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import InfoContainer from './InfoContainer'
-import { Icon, Checkbox, Radio, Form, Message, Input, TextArea, Button, Select } from 'semantic-ui-react'
+import { Card, Icon, Checkbox, Radio, Form, Message, Input, TextArea, Button, Select, Rating, FormGroup } from 'semantic-ui-react'
 import CardContainer from './CardContainer'
 import { useHistory } from 'react-router'
 
@@ -9,14 +9,12 @@ const API = 'http://localhost:3000/'
 
 const NewComparison = (props) => {
 
-    const [value, setValue] = useState()
+    const [ratingOne, setRatingOne] = useState(1)
+    const [ratingTwo, setRatingTwo] = useState(1)
+
+    const ratings = [ratingOne, ratingTwo]
 
     const history = useHistory()
-
-    const handleChange = (e, {value}) => {
-        console.log(value)
-        setValue(value)
-    }
 
     const createNewComparison = (event) => {
 
@@ -55,14 +53,15 @@ const NewComparison = (props) => {
         fetch(API+'comparisons', postConfig)
         .then(r => r.json())
         .then(newCompObject => {
-            props.selectedPrograms.forEach(programObject => {
+            props.selectedPrograms.forEach((programObject, index) => {
                 programObject.comparisonsRef.push(newCompObject.id)
+                programObject.rating = (programObject.rating + ratings[index]) / programObject.comparisonsRef.length
                 let patchConfig = {
                     method: "PATCH",
                     headers: {
                         "Content-Type": "application/json",
                     },
-                    body: JSON.stringify({comparisonsRef: programObject.comparisonsRef})
+                    body: JSON.stringify({comparisonsRef: programObject.comparisonsRef, rating: programObject.rating})
                 }
 
                 fetch(API+'programs/'+programObject.id, patchConfig)
@@ -77,104 +76,66 @@ const NewComparison = (props) => {
     return (
         <div>
             <InfoContainer selectedPrograms={props.selectedPrograms}/>
-            <Form onSubmit={createNewComparison}>
-                <Form.Field  width={3} id="categories" label='Category of Review' control='select'>
-                    <option value='Ease of Use'>Ease of Use</option>
-                    <option value='Functionality'>Functionality</option>
-                    <option value='Reliability'>Reliability</option>
-                    <option value='Aesthetics'>Aesthetics</option>
-                 </Form.Field>
-                <Form.Group widths='equal'>
-                    <Form.Field
-                        id='reviewOne'
-                        control={TextArea}
-                        placeholder={comPlaceholder}
-                        >
-                    </Form.Field>
-                    <Form.Field
-                        id='reviewTwo'
-                        control={TextArea}
-                        placeholder={comPlaceholder}
-                        >
-                    </Form.Field>
-                </Form.Group>
-                <Form.Group inline>
-                    <label>Rating</label>
-                    <Form.Field
-                        control={Radio}
-                        label={
-                            <div>
-                                <Icon color='yellow' name='star' />
-                            </div>
-                        }
-                        value='1'
-                        checked={value === '1'}
-                        onChange={handleChange}
-                    />
-                    <Form.Field
-                        control={Radio}
-                        label={
-                            <div>
-                                <Icon color='yellow' name='star' />
-                                <Icon color='yellow' name='star' />
-                            </div>
-                        }
-                        value='2'
-                        checked={value === '2'}
-                        onChange={handleChange}
-                    />
-                    <Form.Field
-                        control={Radio}
-                        label={
-                            <div>
-                                <Icon color='yellow' name='star' />
-                                <Icon color='yellow' name='star' />
-                                <Icon color='yellow' name='star' />
-                            </div>
-                        }
-                        value='3'
-                        checked={value === '3'}
-                        onChange={handleChange}
-                    />
-                    <Form.Field
-                        control={Radio}
-                        label={
-                            <div>
-                                <Icon color='yellow' name='star' />
-                                <Icon color='yellow' name='star' />
-                                <Icon color='yellow' name='star' />
-                                <Icon color='yellow' name='star' />
-                            </div>
-                        }
-                        value='4'
-                        checked={value === '4'}
-                        onChange={handleChange}
-                    />
-                    <Form.Field
-                        control={Radio}
-                        label={
-                            <div>
-                                <Icon color='yellow' name='star' />
-                                <Icon color='yellow' name='star' />
-                                <Icon color='yellow' name='star' />
-                                <Icon color='yellow' name='star' />
-                                <Icon color='yellow' name='star' />
-                            </div>
-                        }
-                        value='5'
-                        checked={value === '5'}
-                        onChange={handleChange}
-                    />
+                <Form onSubmit={createNewComparison}>
+                    <FormGroup>
+                        <Form.Field  width={3} id="categories" label='Category of Review' control='select'>
+                            <option value='Ease of Use'>Ease of Use</option>
+                            <option value='Functionality'>Functionality</option>
+                            <option value='Reliability'>Reliability</option>
+                            <option value='Aesthetics'>Aesthetics</option>
+                        </Form.Field>
+                    </FormGroup>
+                    <FormGroup widths='equal'>
+                        <Card.Group itemsPerRow={2}>
+                            <Card>
+                                <Form.Field
+                                    id='reviewOne'
+                                    control={TextArea}
+                                    placeholder={comPlaceholder}
 
-                </Form.Group>
-                
-                <Message
-                    success
-                    header='Review Completed'
-                    content='Your comparions-review has been succesfully submited. Thank you!'
-                    />
-                <Form.Field control={Button}>Submit</Form.Field>
-            </Form>
+                                >
+                                </Form.Field>
+                                <Rating icon='star' defaultRating={0} maxRating={5} onRate={(e, {rating}) => setRatingOne(rating)} />
+                                {/* <Form.Field
+                                    id='ratingOne'
+                                    control={Radio}
+                                    label={
+                                        <Rating icon='star' defaultRating={1} maxRating={5} />
+                                    }
+                                    value='1'
+                                    checked={value === '1'}
+                                    onChange={handleChange}
+                                /> */}
+                            </Card>
+                            <Card>
+                                <Form.Field
+                                        id='reviewTwo'
+                                        control={TextArea}
+                                        placeholder={comPlaceholder}
+                                        >
+                                </Form.Field>
+                                <Rating icon='star' defaultRating={0} maxRating={5} onRate={(e, {rating}) => setRatingTwo(rating)} />
+                                {/* <Form.Field
+                                    id='ratingTwo'
+                                    control={Radio}
+                                    label={
+                                        
+                                    }
+                                    value='2'
+                                    checked={value === '2'}
+                                    onChange={handleChange}
+                                /> */}
+                            </Card>
+                        </Card.Group>
+                    </FormGroup>
+                    
+                    <Message
+                        success
+                        header='Review Completed'
+                        content='Your comparions-review has been succesfully submited. Thank you!'
+                        />
+                    <Form.Field control={Button}>Submit</Form.Field>
+                </Form>
             <CardContainer
                 programsList={props.programsList}
                 addToSelectedPrograms={props.addToSelectedPrograms}/>

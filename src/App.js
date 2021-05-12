@@ -4,6 +4,7 @@ import './App.css';
 import CompPage from './components/CompPage'
 import NewProgram from './components/NewProgram'
 import NewComparison from './components/NewComparison'
+import LoginAndRegister from './components/LoginAndRegister';
 
 const API = 'http://localhost:3000/'
 
@@ -13,6 +14,13 @@ class App extends Component{
             programsList: [],
             selectedPrograms: [],
             filter: ""
+      }
+
+      clearSelections = () => {
+            this.setState({
+                  selectedPrograms: [],
+                  filter: ""
+            })
       }
 
       componentDidMount() {
@@ -35,6 +43,7 @@ class App extends Component{
             let newSelectedProgramsArray = [...this.state.selectedPrograms]
             newSelectedProgramsArray.push(programObject)
             this.setState({selectedPrograms: newSelectedProgramsArray})
+            this.setFilter(programObject.programCategories[0])
       }
       
       fetchProgramsList = () => {
@@ -45,7 +54,16 @@ class App extends Component{
 
       addToProgramsList = (newProgram) => {this.setState({programsList: [...this.state.programsList, newProgram]})}
 
+      applyFilter = () => {
+            if (this.state.filter !== '') {
+                  return [...this.state.programsList].filter(programObject => programObject.programCategories.includes(this.state.filter))
+            } else return this.state.programsList
+      }
+
       render() {
+
+            let programsToDisplay = this.applyFilter()
+
             return (
                   <Router>
                         <div className='App'>
@@ -53,13 +71,14 @@ class App extends Component{
                                     <Route exact path='/'>
                                           <CompPage
                                                 user={this.state.user}
-                                                programsList={this.state.programsList}
+                                                programsList={programsToDisplay}
                                                 selectedPrograms={this.state.selectedPrograms}
                                                 filter={this.state.filter}
                                                 fetchProgramsList={this.fetchProgramsList}
                                                 addToSelectedPrograms={this.addToSelectedPrograms}
                                                 setFilter={this.setFilter}
-                                                setUser={this.setUser}/>
+                                                setUser={this.setUser}
+                                                clearSelections={this.clearSelections}/>
                                     </Route>
                                     <Route exact path='/addNewProgram'>
                                           <NewProgram addToProgramsList={this.addToProgramsList}/>
@@ -70,6 +89,9 @@ class App extends Component{
                                                 selectedPrograms={this.state.selectedPrograms}
                                                 programsList={this.state.programsList}
                                                 addToSelectedPrograms={this.addToSelectedPrograms}/>
+                                    </Route>
+                                    <Route exact path='/logIn'>
+                                          <LoginAndRegister />
                                     </Route>
                               </Switch>
                         </div>

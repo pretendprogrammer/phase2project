@@ -5,7 +5,7 @@ const ProgramCard = (props) => (
     <Card>
         <div onClick={() => props.addToSelectedPrograms(props.programObject)}>
             <Image src={props.programObject.image} size='large'/>
-            {props.programObject.title}
+            <Card.Header>{props.programObject.title}</Card.Header>
         </div>
     </Card>
 )

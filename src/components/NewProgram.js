@@ -1,17 +1,31 @@
 import React from 'react'
+import { useHistory } from 'react-router'
 import { Form, Input, TextArea, Button, Select } from 'semantic-ui-react'
 
 const NewProgram = (props) => {
 
     const API = 'http://localhost:3000/programs'
 
+    const history = useHistory()
+
     const handleSubmit = (e) => {
+
+        let title = e.target.title.value
+        let image = e.target.image.value
+        let developer = e.target.developer.value
+        let description = e.target.description.value
+        let programCategories = e.target.categories.value
+
+        if (programCategories.length < 1 || title.length < 1 || title.length < 1 || developer.length < 1 || description.length < 1) {
+            return null
+        }
+
         let newObject = {        
-            title: e.target.title.value,
-            image: e.target.image.value,
-            developer: e.target.developer.value,
-            description: e.target.description.value,
-            programCategories: [e.target.categories.value],
+            title: title,
+            image: image,
+            developer: developer,
+            description: description,
+            programCategories: [programCategories],
             rating: null,
             comparisonsRef: []
         }
@@ -26,7 +40,10 @@ const NewProgram = (props) => {
 
         fetch(API, postConfig)
             .then(r => r.json())
-            .then(newProgramObject => props.addToProgramsList(newProgramObject))
+            .then(newProgramObject => {
+                props.addToProgramsList(newProgramObject)
+                history.push('/')
+            })
         
     }
 
@@ -46,10 +63,11 @@ const NewProgram = (props) => {
                     placeholder="Insert Program Developer"
                 />
                 <Form.Field id="categories" label='Categories' control='select'>
+                    <option value='' selected={true} disabled={true} >None</option>
                     <option value='Dating'>Dating</option>
                     <option value='Games'>Games</option>
                     <option value='Multimedia'>Multimedia</option>
-                    <option value='Finance'>Finance</option>\
+                    <option value='Finance'>Finance</option>
                  </Form.Field>
             </Form.Group>
             <Form.Field
@@ -63,10 +81,6 @@ const NewProgram = (props) => {
                 control={Input}
                 label='Image'
                 placeholder='Insert Program Logo URL'
-                error={{
-                    content: 'Please enter a valid url',
-                    pointing: 'below',
-                }}
             />
             <Form.Field
                 id='submitButton'

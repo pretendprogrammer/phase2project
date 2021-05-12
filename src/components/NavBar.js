@@ -10,8 +10,8 @@ const NavBar = (props) => {
 
     return (
         <Menu>
-                <select>
-                    <option value="None">None</option>
+                <select onChange={(e) => props.setFilter(e.target.value)}>
+                    <option value="">No Filter</option>
                     <option value="Dating">Dating</option>
                     <option value="Games">Games</option>
                     <option value="Multimedia">Multimedia</option>
@@ -31,7 +31,13 @@ const NavBar = (props) => {
                 Add Comparison
             </Menu.Item>
             <Menu.Item
+                name='clearSelection'
+                onClick={() => props.clearSelections()}>
+                Clear Selections
+            </Menu.Item>
+            <Menu.Item
                 name='userLoginButton'
+                onClick={() => history.push("/logIn")}
             >
                 User Login
             </Menu.Item>

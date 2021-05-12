@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Image } from 'semantic-ui-react'
+import { Card, Image, Rating} from 'semantic-ui-react'
 
 const ProgramInfo = (props) => (
     <Card>
@@ -10,7 +10,7 @@ const ProgramInfo = (props) => (
             <Card.Description>{props.programObject.description}</Card.Description>
         </Card.Content>
         <Card.Content>
-            {props.programObject.rating}
+        <Rating icon='star' defaultRating={props.programObject.rating} maxRating={5} />
         </Card.Content>
     </Card>
 )
