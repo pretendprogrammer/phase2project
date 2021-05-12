@@ -23,6 +23,8 @@ class CompPage extends Component {
         .then(programsList => this.setState({programsList}))
     }
 
+    addToProgramsList = (newProgram) => {this.setState({programsList: [...this.state.programsList, newProgram]})}
+
     // THIS FUNCTION IS PASSED DOWN TO EACH PROGRAM CARD TO ADD IT TO THE STATE IN THIS SCOPE
     addToSelectedPrograms = (programObject) => {
         if (this.state.selectedPrograms.length === 2) {
@@ -45,7 +47,8 @@ class CompPage extends Component {
         return (
             <div>
                 <NavBar setFilter={this.setFilter} setUser={this.setUser} user={this.state.user} filter={this.state.filter}/>
-                <NewProgram />
+                <NewProgram addToProgramsList={this.addToProgramsList}/>
+                <NewComparison selectedPrograms={this.state.selectedPrograms} />
                 <ExpandedInfo selectedPrograms={this.state.selectedPrograms}/>
                 <CardContainer addToSelectedPrograms={this.addToSelectedPrograms} programsList={this.state.programsList}/>
             </div>

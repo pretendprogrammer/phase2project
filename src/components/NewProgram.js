@@ -3,23 +3,30 @@ import { Form, Input, TextArea, Button, Select } from 'semantic-ui-react'
 
 const NewProgram = (props) => {
 
-    const programCategories = [
-        { key: 'd', text: 'Dating', value: 'Dating' },
-        { key: 'g', text: 'Games', value: 'Games' },
-        { key: 'm', text: 'Multimedia', value: 'Multimedia' },
-        { key: 'f', text: 'Finance', value: 'Finance' },
-      ]
+    const API = 'http://localhost:3000/programs'
+
     const handleSubmit = (e) => {
         let newObject = {        
             title: e.target.title.value,
             image: e.target.image.value,
             developer: e.target.developer.value,
             description: e.target.description.value,
-            programCategories: [e.target.programCategories.value],
+            programCategories: [e.target.categories.value],
             rating: null,
             comparisonsRef: []
         }
-        console.log(newObject)
+
+        let postConfig = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newObject)
+        }
+
+        fetch(API, postConfig)
+            .then(r => r.json())
+            .then(newProgramObject => props.addToProgramsList(newProgramObject))
         
     }
 
@@ -38,14 +45,12 @@ const NewProgram = (props) => {
                     label="Developer"
                     placeholder="Insert Program Developer"
                 />
-                <Form.Field
-                    control={Select}
-                    options={programCategories}
-                    label={{ children: 'Program Categories', htmlFor: 'programCategories' }}
-                    placeholder='Program Categories'
-                    search
-                    searchInput={{ id: 'programCategories' }}
-                />
+                <Form.Field id="categories" label='Categories' control='select'>
+                    <option value='Dating'>Dating</option>
+                    <option value='Games'>Games</option>
+                    <option value='Multimedia'>Multimedia</option>
+                    <option value='Finance'>Finance</option>\
+                 </Form.Field>
             </Form.Group>
             <Form.Field
                 id='description'

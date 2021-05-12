@@ -1,95 +1,127 @@
 {
-    "programs": [
+  "programs": [
+    {
+      "title": "Tinder",
+      "image": "https://i.pcmag.com/imagery/reviews/02ibIXDUJNJ3V7KL8jhUNFf-7.1569480464.fit_scale.size_1028x578.png",
+      "developer": "Tinder Inc.",
+      "description": "We're here to get you laid.",
+      "programCategories": [
+        "Dating"
+      ],
+      "rating": 1,
+      "comparisonsRef": [
+        1,
+        2,
+        3
+      ],
+      "id": 1
+    },
+    {
+      "title": "Bumble",
+      "image": "https://i.pcmag.com/imagery/reviews/014Qlx0F7XvLzMxHFRR7CEo-11.1569476635.fit_scale.size_1028x578.jpg",
+      "developer": "Bumble Holding Limited",
+      "description": "Ladies first.",
+      "programCategories": [
+        "Dating"
+      ],
+      "rating": 1,
+      "comparisonsRef": [
+        1,
+        3
+      ],
+      "id": 2
+    },
+    {
+      "title": "OkCupid",
+      "image": "https://i.pcmag.com/imagery/reviews/049AUNiOE3A6ATMl0BxYfCj-7.1569482590.fit_scale.size_1028x578.jpg",
+      "developer": "OkCupid",
+      "description": "We know you better than you.",
+      "programCategories": [
+        "Dating"
+      ],
+      "rating": 1,
+      "comparisonsRef": [
+        2
+      ],
+      "id": 3
+    },
+    {
+      "title": "VLC",
+      "image": "https://cdn.iconscout.com/icon/free/png-512/vlc-media-player-2-569258.png",
+      "developer": "VLC",
+      "description": "media player",
+      "programCategories": [
+        "Multimedia"
+      ],
+      "rating": null,
+      "comparisonsRef": [],
+      "id": 4
+    }
+  ],
+  "comparisons": [
+    {
+      "userId": 1,
+      "rating": 1,
+      "categories": [
+        "Ease of Use"
+      ],
+      "comparison": [
         {
           "id": 1,
-          "title": "Tinder",
-          "image": "https://i.pcmag.com/imagery/reviews/02ibIXDUJNJ3V7KL8jhUNFf-7.1569480464.fit_scale.size_1028x578.png",
-          "developer": "Tinder Inc.",
-          "description": "We're here to get you laid.",
-          "programCategories": ["Dating"],
-          "rating": 1,
-          "comparisonsRef": [1,2,3]
+          "text": "Simple and straight-forward. -tinder"
         },
         {
           "id": 2,
-          "title": "Bumble",
-          "image": "https://i.pcmag.com/imagery/reviews/014Qlx0F7XvLzMxHFRR7CEo-11.1569476635.fit_scale.size_1028x578.jpg",
-          "developer": "Bumble Holding Limited",
-          "description": "Ladies first.",
-          "programCategories": ["Dating"],
-          "rating": 1,
-          "comparisonsRef": [1,3]
-        },
-        {
-        "id": 3,
-        "title": "OkCupid",
-        "image": "https://i.pcmag.com/imagery/reviews/049AUNiOE3A6ATMl0BxYfCj-7.1569482590.fit_scale.size_1028x578.jpg",
-        "developer": "OkCupid",
-        "description": "We know you better than you.",
-        "programCategories": ["Dating"],
-        "rating": 1,
-        "comparisonsRef": [2]
+          "text": "Way too many complicated features. -bumble"
         }
-    ],
-    "comparisons": [
+      ],
+      "id": 1
+    },
+    {
+      "userId": 1,
+      "rating": 1,
+      "categories": [
+        "Ease of Use"
+      ],
+      "comparison": [
         {
           "id": 1,
-          "userId": 1,
-          "rating": 1,
-          "categories": ["Ease of Use"],
-          "comparison": [
-            {
-              "id": 1,
-              "text": "Simple and straight-forward. -tinder"
-            },
-            {
-              "id": 2,
-              "text": "Way too many complicated features. -bumble"
-            }
-          ]
+          "text": "Old and cliche. -tinder"
+        },
+        {
+          "id": 2,
+          "text": "New and exciting. -bumble"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "userId": 2,
+      "rating": 1,
+      "categories": [
+        "Reliability"
+      ],
+      "comparison": [
+        {
+          "id": 1,
+          "text": "I've never encountered a single bug. -tinder"
         },
         {
           "id": 3,
-          "userId": 1,
-          "rating": 1,
-          "categories": ["Ease of Use"],
-          "comparison": [
-            {
-              "id": 1,
-              "text": "Old and cliche. -tinder"
-            },
-            {
-              "id": 2,
-              "text": "New and exciting. -bumble"
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "userId": 2,
-          "rating": 1,
-          "categories": ["Reliability"],
-          "comparison": [
-            {
-              "id": 1,
-              "text": "I've never encountered a single bug. -tinder"
-            },
-            {
-              "id": 3,
-              "text": "Crashed at least once a day. -okcupid"
-            }
-          ]
+          "text": "Crashed at least once a day. -okcupid"
         }
-    ],
-    "users": [
-      {
-        "id": 1,
-        "username": "Nick M"
-      },
-      {
-        "id": 2,
-        "username": "Yosef A"
-      }
-    ]
-  }
-  
+      ],
+      "id": 2
+    }
+  ],
+  "users": [
+    {
+      "username": "Nick M",
+      "id": 1
+    },
+    {
+      "username": "Yosef A",
+      "id": 2
+    }
+  ]
+}
