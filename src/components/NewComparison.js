@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import InfoContainer from './InfoContainer'
-import { Icon,Checkbox, Radio, Form, Message, Input, TextArea, Button, Select } from 'semantic-ui-react'
+import { Icon, Checkbox, Radio, Form, Message, Input, TextArea, Button, Select } from 'semantic-ui-react'
+import CardContainer from './CardContainer'
 
 const comPlaceholder = `What does this program have that the other doesn't?`
 const API = 'http://localhost:3000/'
@@ -161,6 +162,9 @@ const NewComparison = (props) => {
                     />
                 <Form.Field control={Button}>Submit</Form.Field>
             </Form>
+            <CardContainer
+                programsList={props.programsList}
+                addToSelectedPrograms={props.addToSelectedPrograms}/>
         </div>
     )
 }

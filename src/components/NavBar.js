@@ -2,9 +2,11 @@ import React from 'react'
 import { Menu } from 'semantic-ui-react'
 import ReactDOM from 'react-dom';
 /* Add NavLink to importer */
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route, NavLink, Link, useHistory } from 'react-router-dom';
 
 const NavBar = (props) => {
+
+    const history = useHistory()
 
     return (
         <Menu>
@@ -18,11 +20,13 @@ const NavBar = (props) => {
             
             <Menu.Item
                 name='addProgramButton'
+                onClick={() => history.push("/addNewProgram")}
             >
                 Add Program
             </Menu.Item>
             <Menu.Item
                 name='addComparisonButton'
+                onClick={() => history.push("/addNewComparison")}
             >
                 Add Comparison
             </Menu.Item>
