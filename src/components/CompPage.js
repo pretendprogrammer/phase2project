@@ -18,6 +18,10 @@ class CompPage extends Component {
     }
 
     componentDidMount() {
+        this.fetchProgramsList()
+    }
+
+    fetchProgramsList = () => {
         fetch(API+'programs')
         .then(r => r.json())
         .then(programsList => this.setState({programsList}))
@@ -48,7 +52,7 @@ class CompPage extends Component {
             <div>
                 <NavBar setFilter={this.setFilter} setUser={this.setUser} user={this.state.user} filter={this.state.filter}/>
                 <NewProgram addToProgramsList={this.addToProgramsList}/>
-                <NewComparison selectedPrograms={this.state.selectedPrograms} />
+                <NewComparison fetchProgramsList={this.fetchProgramsList} selectedPrograms={this.state.selectedPrograms} />
                 <ExpandedInfo selectedPrograms={this.state.selectedPrograms}/>
                 <CardContainer addToSelectedPrograms={this.addToSelectedPrograms} programsList={this.state.programsList}/>
             </div>

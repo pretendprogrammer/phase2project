@@ -40,9 +40,23 @@ const NewComparison = (props) => {
         }
     
         fetch(API+'comparisons', postConfig)
-        .then(r => r.json)
+        .then(r => r.json())
         .then(newCompObject => {
-            props.selectedPrograms.forEach(programObject => console.log('a thing'))
+            props.selectedPrograms.forEach(programObject => {
+                programObject.comparisonsRef.push(newCompObject.id)
+                let patchConfig = {
+                    method: "PATCH",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({comparisonsRef: programObject.comparisonsRef})
+                }
+
+                fetch(API+'programs/'+programObject.id, patchConfig)
+                .then(r => r.json())
+                .then(() => null)
+            })
+            props.fetchProgramsList()
         })
     }
 
