@@ -14,7 +14,9 @@
         1,
         2,
         3,
-        5
+        5,
+        6,
+        7
       ]
     },
     {
@@ -30,7 +32,9 @@
       "comparisonsRef": [
         1,
         3,
-        4
+        4,
+        6,
+        7
       ]
     },
     {
@@ -150,6 +154,40 @@
         }
       ],
       "id": 5
+    },
+    {
+      "rating": null,
+      "categories": [
+        "Ease of Use"
+      ],
+      "comparison": [
+        {
+          "id": 1,
+          "text": "Basic"
+        },
+        {
+          "id": 2,
+          "text": "Complicated"
+        }
+      ],
+      "id": 6
+    },
+    {
+      "rating": null,
+      "categories": [
+        "Aesthetics"
+      ],
+      "comparison": [
+        {
+          "id": 1,
+          "text": "Is red"
+        },
+        {
+          "id": 2,
+          "text": "Is Yellow"
+        }
+      ],
+      "id": 7
     }
   ],
   "users": [

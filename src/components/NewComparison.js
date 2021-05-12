@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import InfoContainer from './InfoContainer'
 import { Icon, Checkbox, Radio, Form, Message, Input, TextArea, Button, Select } from 'semantic-ui-react'
 import CardContainer from './CardContainer'
+import { useHistory } from 'react-router'
 
 const comPlaceholder = `What does this program have that the other doesn't?`
 const API = 'http://localhost:3000/'
@@ -10,12 +11,23 @@ const NewComparison = (props) => {
 
     const [value, setValue] = useState()
 
+    const history = useHistory()
+
     const handleChange = (e, {value}) => {
         console.log(value)
         setValue(value)
     }
 
     const createNewComparison = (event) => {
+
+        let categories = event.target.categories.value
+        let reviewOne = event.target.reviewOne.value
+        let reviewTwo = event.target.reviewTwo.value
+
+
+        if (props.selectedPrograms.length < 2 || categories.length === 0 || reviewOne.length === 0 || reviewTwo.length === 0) {
+            return null
+        }
         let newObject = {
             userId: props.user,
             rating: null,
@@ -58,6 +70,7 @@ const NewComparison = (props) => {
                 .then(() => null)
             })
             props.fetchProgramsList()
+            history.push('/')
         })
     }
 
