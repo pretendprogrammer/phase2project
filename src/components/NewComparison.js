@@ -77,57 +77,38 @@ const NewComparison = (props) => {
         <div>
             <InfoContainer selectedPrograms={props.selectedPrograms}/>
                 <Form onSubmit={createNewComparison}>
-                    <FormGroup>
-                        <Form.Field  width={3} id="categories" label='Category of Review' control='select'>
+                    <FormGroup style={{position: 'relative',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        }}>
+                        <Form.Field width={3} id="categories" label='Category of Review' control='select'>
                             <option value='Ease of Use'>Ease of Use</option>
                             <option value='Functionality'>Functionality</option>
                             <option value='Reliability'>Reliability</option>
                             <option value='Aesthetics'>Aesthetics</option>
                         </Form.Field>
                     </FormGroup>
-                    <FormGroup widths='equal'>
-                        <Card.Group itemsPerRow={2}>
-                            <Card>
-                                <Form.Field
-                                    id='reviewOne'
+                    <Card.Group itemsPerRow={2}>
+                        <Card>
+                            <Form.Field
+                                id='reviewOne'
+                                control={TextArea}
+                                placeholder={comPlaceholder}
+
+                            >
+                            </Form.Field>
+                            <Rating icon='star' defaultRating={0} maxRating={5} onRate={(e, {rating}) => setRatingOne(rating)} />
+                        </Card>
+                        <Card>
+                            <Form.Field
+                                    id='reviewTwo'
                                     control={TextArea}
                                     placeholder={comPlaceholder}
-
-                                >
-                                </Form.Field>
-                                <Rating icon='star' defaultRating={0} maxRating={5} onRate={(e, {rating}) => setRatingOne(rating)} />
-                                {/* <Form.Field
-                                    id='ratingOne'
-                                    control={Radio}
-                                    label={
-                                        <Rating icon='star' defaultRating={1} maxRating={5} />
-                                    }
-                                    value='1'
-                                    checked={value === '1'}
-                                    onChange={handleChange}
-                                /> */}
-                            </Card>
-                            <Card>
-                                <Form.Field
-                                        id='reviewTwo'
-                                        control={TextArea}
-                                        placeholder={comPlaceholder}
-                                        >
-                                </Form.Field>
-                                <Rating icon='star' defaultRating={0} maxRating={5} onRate={(e, {rating}) => setRatingTwo(rating)} />
-                                {/* <Form.Field
-                                    id='ratingTwo'
-                                    control={Radio}
-                                    label={
-                                        
-                                    }
-                                    value='2'
-                                    checked={value === '2'}
-                                    onChange={handleChange}
-                                /> */}
-                            </Card>
-                        </Card.Group>
-                    </FormGroup>
+                                    >
+                            </Form.Field>
+                            <Rating icon='star' defaultRating={0} maxRating={5} onRate={(e, {rating}) => setRatingTwo(rating)} />
+                        </Card>
+                    </Card.Group>
                     
                     <Message
                         success

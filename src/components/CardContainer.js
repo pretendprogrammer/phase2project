@@ -7,7 +7,7 @@ class CardContainer extends Component {
     render() {
         return (
             <Card.Group itemsPerRow={5}>
-                {this.props.programsList.map(programObject => <ProgramCard addToSelectedPrograms={this.props.addToSelectedPrograms} programObject={programObject}/>)}
+                {this.props.programsList.map(programObject => <ProgramCard key={programObject.id} addToSelectedPrograms={this.props.addToSelectedPrograms} programObject={programObject}/>)}
             </Card.Group>
         )
     }

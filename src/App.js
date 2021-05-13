@@ -55,9 +55,14 @@ class App extends Component{
       addToProgramsList = (newProgram) => {this.setState({programsList: [...this.state.programsList, newProgram]})}
 
       applyFilter = () => {
+            let programsToDisplay
             if (this.state.filter !== '') {
-                  return [...this.state.programsList].filter(programObject => programObject.programCategories.includes(this.state.filter))
-            } else return this.state.programsList
+                  programsToDisplay =  [...this.state.programsList].filter(programObject => programObject.programCategories.includes(this.state.filter))
+            } else {
+                  programsToDisplay = this.state.programsList
+            }
+            programsToDisplay = programsToDisplay.filter(programObject => !this.state.selectedPrograms.includes(programObject))
+            return programsToDisplay
       }
 
       render() {

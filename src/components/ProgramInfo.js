@@ -3,7 +3,7 @@ import { Card, Image, Rating} from 'semantic-ui-react'
 
 const ProgramInfo = (props) => (
     <Card>
-        <Image wrapped ui={false} src={props.programObject.image}/>
+        <Image wrapped ui={false} size='tiny' floated='right' src={props.programObject.image}/>
         <Card.Content>
             <Card.Header>{props.programObject.title}</Card.Header>
             <Card.Meta>{props.programObject.developer}</Card.Meta>
