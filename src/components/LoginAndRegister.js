@@ -1,28 +1,30 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router'
 import { Form, Button, Segment, Header, Divider, Grid } from 'semantic-ui-react'
 
 const API = 'http://localhost:3000/users'
 
+
 const LoginAndRegister = (props) => {
+    
+    const history = useHistory()
+    let foundUserObject
 
     const checkIfUserExists = (userString) => {
 
         return fetch(API)
             .then(r => r.json())
             .then(fetchedArray => {
-                if (fetchedArray.find(userObject => userObject.username === userString)) {
-                    return true
-                } else {
-                    return false
-                }
+                foundUserObject = fetchedArray.find(userObject => userObject.username === userString)
             })
     }
 
     const login = (e) => {
         checkIfUserExists(e.target.loginInput.value)
-        .then(booleanResult => {
-             if (booleanResult === true) {
-                console.log("User can login")
+        .then(() => {
+             if (foundUserObject !== undefined) {
+                props.setUser(foundUserObject)
+                history.push('/')
              } else {
                  alert('User does not exist')
              }
@@ -31,9 +33,24 @@ const LoginAndRegister = (props) => {
 
     const register = (e) => {
         checkIfUserExists(e.target.registerInput.value)
-        .then(booleanResult => {
-             if (booleanResult === false) {
-                console.log("User can register")
+        .then(() => {
+             if (foundUserObject === undefined) {
+                let newUserObject = {
+                    username: e.target.registerInput.value
+                }
+                let postConfig = {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(newUserObject),
+                  }
+                fetch(API, postConfig)
+                  .then(r => r.json())
+                  .then(postedUserObject => {
+                      props.setUser(postedUserObject)
+                      history.push('/')
+                  })
              } else {
                  alert('User already exists')
              }

@@ -8,14 +8,15 @@
       "programCategories": [
         "Dating"
       ],
-      "rating": 0,
+      "rating": 0.2857142857142857,
       "comparisonsRef": [
         1,
         2,
         3,
         5,
         6,
-        7
+        7,
+        11
       ],
       "id": 1
     },
@@ -104,8 +105,10 @@
       "programCategories": [
         "Finance"
       ],
-      "rating": 0,
-      "comparisonsRef": [],
+      "rating": 2,
+      "comparisonsRef": [
+        12
+      ],
       "id": 7
     },
     {
@@ -116,8 +119,10 @@
       "programCategories": [
         "Finance"
       ],
-      "rating": 0,
-      "comparisonsRef": [],
+      "rating": 4,
+      "comparisonsRef": [
+        12
+      ],
       "id": 8
     },
     {
@@ -191,8 +196,10 @@
       "programCategories": [
         "Dating"
       ],
-      "rating": 0,
-      "comparisonsRef": [],
+      "rating": 4,
+      "comparisonsRef": [
+        11
+      ],
       "id": 14
     },
     {
@@ -276,6 +283,7 @@
       ]
     },
     {
+      "userId": 3,
       "rating": null,
       "categories": [
         "Aesthetics"
@@ -293,6 +301,7 @@
       "id": 4
     },
     {
+      "userId": 3,
       "rating": null,
       "categories": [
         "Functionality"
@@ -310,6 +319,7 @@
       "id": 5
     },
     {
+      "userId": 2,
       "rating": null,
       "categories": [
         "Ease of Use"
@@ -327,6 +337,7 @@
       "id": 6
     },
     {
+      "userId": 4,
       "rating": null,
       "categories": [
         "Aesthetics"
@@ -344,6 +355,7 @@
       "id": 7
     },
     {
+      "userId": 1,
       "rating": null,
       "categories": [
         "Ease of Use"
@@ -361,6 +373,7 @@
       "id": 8
     },
     {
+      "userId": 2,
       "rating": null,
       "categories": [
         "Reliability"
@@ -378,6 +391,7 @@
       "id": 9
     },
     {
+      "userId": 1,
       "rating": null,
       "categories": [
         "Reliability"
@@ -393,6 +407,42 @@
         }
       ],
       "id": 10
+    },
+    {
+      "userId": 3,
+      "rating": null,
+      "categories": [
+        "Ease of Use"
+      ],
+      "comparison": [
+        {
+          "id": 14,
+          "text": "God-fearing people"
+        },
+        {
+          "id": 1,
+          "text": "fearing-God people"
+        }
+      ],
+      "id": 11
+    },
+    {
+      "userId": 4,
+      "rating": null,
+      "categories": [
+        "Ease of Use"
+      ],
+      "comparison": [
+        {
+          "id": 8,
+          "text": "Rich"
+        },
+        {
+          "id": 7,
+          "text": "Poor"
+        }
+      ],
+      "id": 12
     }
   ],
   "users": [
@@ -403,6 +453,14 @@
     {
       "id": 2,
       "username": "Yosef A"
+    },
+    {
+      "username": "David",
+      "id": 3
+    },
+    {
+      "username": "Vidhi",
+      "id": 4
     }
   ]
 }

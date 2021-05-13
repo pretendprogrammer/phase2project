@@ -27,7 +27,7 @@ const NewComparison = (props) => {
             return null
         }
         let newObject = {
-            userId: props.user,
+            userId: props.userId,
             rating: null,
             categories: [event.target.categories.value],
             comparison: [

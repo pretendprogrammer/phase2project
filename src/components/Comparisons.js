@@ -3,17 +3,18 @@ import { Card, Feed } from 'semantic-ui-react'
 
 const Comparisons = (props) => {
     let textToShow = props.compsToDisplay.filter(comp => comp.id === props.programId)
+    let usersToShow = props.compUsers.filter(userId => userId % 2 === props.userSort)
     return (
         <Card>
             <Card.Content>
                 <Card.Header>Reviews</Card.Header>
             </Card.Content>
-            {textToShow.map(comp => (
+            {textToShow.map((comp, index) => (
                 <Card.Content>
                     <Feed>
                         <Feed.Event>
                             <Feed.Label>
-                                "User"
+                                {usersToShow[index]}
                             </Feed.Label>
                             <Feed.Content>
                                 <Feed.Summary>

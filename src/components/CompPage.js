@@ -8,7 +8,7 @@ class CompPage extends Component {
     render() {
         return (
             <div>
-                <NavBar clearSelections={this.props.clearSelections} setURLPath={this.props.setURLPath} setFilter={this.props.setFilter} setUser={this.props.setUser} user={this.props.user} filter={this.props.filter}/>
+                <NavBar clearSelections={this.props.clearSelections} setURLPath={this.props.setURLPath} setFilter={this.props.setFilter} setUser={this.props.setUser} username={this.props.username} filter={this.props.filter}/>
                 <ExpandedInfo selectedPrograms={this.props.selectedPrograms}/>
                 <CardContainer addToSelectedPrograms={this.props.addToSelectedPrograms} programsList={this.props.programsList}/>
             </div>

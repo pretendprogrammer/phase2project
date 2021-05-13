@@ -10,10 +10,18 @@ const API = 'http://localhost:3000/'
 
 class App extends Component{
       state = {
-            user: 'no user',
+            username: '',
+            userId: null,
             programsList: [],
             selectedPrograms: [],
             filter: ""
+      }
+
+      setUser = (userObject) => {
+            this.setState({
+                  username: userObject.username,
+                  userId: userObject.id
+            })
       }
 
       clearSelections = () => {
@@ -25,10 +33,6 @@ class App extends Component{
 
       componentDidMount() {
             this.fetchProgramsList()
-      }
-
-      setUser = (userSelected) => {
-            this.setState({user: userSelected})
       }
 
       setFilter = (filterSelected) => {
@@ -75,7 +79,8 @@ class App extends Component{
                               <Switch>
                                     <Route exact path='/'>
                                           <CompPage
-                                                user={this.state.user}
+                                                username={this.state.username}
+                                                userId={this.state.userId}
                                                 programsList={programsToDisplay}
                                                 selectedPrograms={this.state.selectedPrograms}
                                                 filter={this.state.filter}
@@ -93,10 +98,11 @@ class App extends Component{
                                                 fetchProgramsList={this.fetchProgramsList}
                                                 selectedPrograms={this.state.selectedPrograms}
                                                 programsList={this.state.programsList}
-                                                addToSelectedPrograms={this.addToSelectedPrograms}/>
+                                                addToSelectedPrograms={this.addToSelectedPrograms}
+                                                userId={this.state.userId}/>
                                     </Route>
                                     <Route exact path='/logIn'>
-                                          <LoginAndRegister />
+                                          <LoginAndRegister setUser={this.setUser} />
                                     </Route>
                               </Switch>
                         </div>

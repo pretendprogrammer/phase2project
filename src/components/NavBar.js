@@ -37,9 +37,9 @@ const NavBar = (props) => {
             </Menu.Item>
             <Menu.Item
                 name='userLoginButton'
-                onClick={() => history.push("/logIn")}
+                onClick={() => {props.username === '' ? history.push("/logIn") : props.setUser({username: '', userId: null})}}
             >
-                User Login
+                {props.username === '' ? 'Login' : 'Log Out'}
             </Menu.Item>
         </Menu>
     )
