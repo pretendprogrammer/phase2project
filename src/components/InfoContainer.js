@@ -4,7 +4,7 @@ import ProgramInfo from './ProgramInfo'
 
 const InfoContainer = (props) => (
     <Card.Group itemsPerRow={2}>
-        {props.selectedPrograms.map(programObject => <ProgramInfo programObject={programObject}/>)}
+        {props.selectedPrograms.map(programObject => <ProgramInfo key={programObject.id} programObject={programObject}/>)}
     </Card.Group>
 )
 

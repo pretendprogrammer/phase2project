@@ -2,23 +2,23 @@ import React from 'react'
 import { Card, Feed } from 'semantic-ui-react'
 
 const Comparisons = (props) => {
-    let textToShow = props.compsToDisplay.filter(comp => comp.id === props.programId)
-    let usersToShow = props.compUsers.filter(userId => userId % 2 === props.userSort)
     return (
         <Card>
             <Card.Content>
                 <Card.Header>Reviews</Card.Header>
             </Card.Content>
-            {textToShow.map((comp, index) => (
-                <Card.Content>
+            {props.compsToDisplay.map((comp) => (
+                <Card.Content key={comp.id}>
                     <Feed>
                         <Feed.Event>
                             <Feed.Label>
-                                {usersToShow[index]}
+                            {props.usersArray.find(userObject => userObject.id === comp.userId).username}
                             </Feed.Label>
                             <Feed.Content>
                                 <Feed.Summary>
-                                    {comp.text}
+                                    {comp.comparison.find(compObject => compObject.id === props.programId) !== undefined?
+                                    comp.comparison.find(compObject => compObject.id === props.programId).text :
+                                    null}
                                 </Feed.Summary>
                             </Feed.Content>
                         </Feed.Event>

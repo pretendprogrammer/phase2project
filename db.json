@@ -148,8 +148,10 @@
       "programCategories": [
         "Dating"
       ],
-      "rating": 0,
-      "comparisonsRef": [],
+      "rating": 1,
+      "comparisonsRef": [
+        14
+      ],
       "id": 10
     },
     {
@@ -160,8 +162,10 @@
       "programCategories": [
         "Dating"
       ],
-      "rating": 0,
-      "comparisonsRef": [],
+      "rating": 4,
+      "comparisonsRef": [
+        14
+      ],
       "id": 11
     },
     {
@@ -172,8 +176,10 @@
       "programCategories": [
         "Dating"
       ],
-      "rating": 0,
-      "comparisonsRef": [],
+      "rating": 5,
+      "comparisonsRef": [
+        13
+      ],
       "id": 12
     },
     {
@@ -210,8 +216,10 @@
       "programCategories": [
         "Dating"
       ],
-      "rating": 0,
-      "comparisonsRef": [],
+      "rating": 3,
+      "comparisonsRef": [
+        13
+      ],
       "id": 15
     },
     {
@@ -443,6 +451,42 @@
         }
       ],
       "id": 12
+    },
+    {
+      "userId": 2,
+      "rating": null,
+      "categories": [
+        "Ease of Use"
+      ],
+      "comparison": [
+        {
+          "id": 15,
+          "text": "blue"
+        },
+        {
+          "id": 12,
+          "text": "green"
+        }
+      ],
+      "id": 13
+    },
+    {
+      "userId": 2,
+      "rating": null,
+      "categories": [
+        "Ease of Use"
+      ],
+      "comparison": [
+        {
+          "id": 10,
+          "text": "It's an H"
+        },
+        {
+          "id": 11,
+          "text": "But this is an M"
+        }
+      ],
+      "id": 14
     }
   ],
   "users": [
