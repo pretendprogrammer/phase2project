@@ -12,11 +12,13 @@ const Comparisons = (props) => {
                     <Feed>
                         <Feed.Event>
                             <Feed.Label>
-                            {props.usersArray.find(userObject => userObject.id === comp.userId).username}
+                            {props.usersArray.find(userObject => userObject.id === comp.userId) !== undefined ?
+                            props.usersArray.find(userObject => userObject.id === comp.userId).username :
+                            null}
                             </Feed.Label>
                             <Feed.Content>
                                 <Feed.Summary>
-                                    {comp.comparison.find(compObject => compObject.id === props.programId) !== undefined?
+                                    {comp.comparison.find(compObject => compObject.id === props.programId) !== undefined ?
                                     comp.comparison.find(compObject => compObject.id === props.programId).text :
                                     null}
                                 </Feed.Summary>

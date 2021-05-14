@@ -10,7 +10,7 @@ const ProgramInfo = (props) => (
             <Card.Description>{props.programObject.description}</Card.Description>
         </Card.Content>
         <Card.Content>
-            <Rating icon='star' defaultRating={props.programObject.rating} maxRating={5} disabled />
+            <Rating icon='star' defaultRating={Math.round(props.programObject.rating)} maxRating={5} disabled />
         </Card.Content>
     </Card>
 )
