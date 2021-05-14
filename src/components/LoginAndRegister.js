@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router'
-import { Form, Button, Segment, Header, Divider, Grid } from 'semantic-ui-react'
+import { Form, Button, Segment, Header, Divider, Grid, Message } from 'semantic-ui-react'
 
 const API = 'http://localhost:3000/users'
 
 
 const LoginAndRegister = (props) => {
     
+    const [badLogin, setBadLogin] = useState(false)
+    const [badRegister, setBadRegister] = useState(false)
     const history = useHistory()
     let foundUserObject
 
@@ -26,7 +28,8 @@ const LoginAndRegister = (props) => {
                 props.setUser(foundUserObject)
                 history.push('/')
              } else {
-                 alert('User does not exist')
+                 setBadLogin(true)
+                 setTimeout(() => setBadLogin(false), 3000)
              }
             })
     }
@@ -52,43 +55,47 @@ const LoginAndRegister = (props) => {
                       history.push('/')
                   })
              } else {
-                 alert('User already exists')
+                 setBadRegister(true)
+                 setTimeout(() => setBadRegister(false), 3000)
              }
             })
     }
 
     return (
-        <Segment placeholder>
-            <Grid columns={2} relaxed='very' stackable>
-                <Grid.Column>
-                    <Header as='h2'>Existing User</Header>
-                    <Form onSubmit={login}>
-                        <Form.Input
-                            id='loginInput'
-                            icon='user'
-                            iconPosition='left'
-                            label='Username'
-                            placeholder='Username'
-                        />
-                        <Button type='submit' content='Login' primary />
-                    </Form>
-                </Grid.Column>
-                <Grid.Column verticalAlign='middle'>
-                    <Header as='h2'>New User</Header>
-                    <Form onSubmit={register}>
-                        <Form.Input
-                            id='registerInput'
-                            icon='user'
-                            iconPosition='left'
-                            label='Username'
-                            placeholder='Username'
-                        />
-                        <Button content='Register' primary />
-                    </Form>
-                </Grid.Column>
-            </Grid>
-            <Divider vertical>Or</Divider>
-        </Segment>
+            <Segment placeholder>
+                <Grid columns={2} relaxed='very' stackable>
+                    <Grid.Column>
+                        <Header as='h2'>Existing User</Header>
+                        <Form onSubmit={login}>
+                            <Form.Input
+                                id='loginInput'
+                                icon='user'
+                                iconPosition='left'
+                                label='Username'
+                                placeholder='Username'
+                            />
+                            <Button type='submit' content='Login' primary />
+                        </Form>
+                        {badLogin ? <Message negative header='User does not exist' content="This user is not registered. Try again, or register a new user" /> : null}
+                    </Grid.Column>
+                    <Grid.Column verticalAlign='middle'>
+                        <Header as='h2'>New User</Header>
+                        <Form onSubmit={register}>
+                            <Form.Input
+                                id='registerInput'
+                                icon='user'
+                                iconPosition='left'
+                                label='Username'
+                                placeholder='Username'
+                            />
+                            <Button content='Register' primary />
+                        </Form>
+                        {badRegister ? <Message negative header='User already exists' content="This user is already registered. Log in with this user, or create a different user." /> : null}
+                    </Grid.Column>
+                </Grid>
+                <Divider vertical>Or</Divider>
+            </Segment>
+
     )
 }
 
