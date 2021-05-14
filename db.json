@@ -184,7 +184,8 @@
       ],
       "rating": 5,
       "comparisonsRef": [
-        13
+        13,
+        17
       ],
       "id": 12
     },
@@ -208,9 +209,10 @@
       "programCategories": [
         "Dating"
       ],
-      "rating": 4,
+      "rating": 3,
       "comparisonsRef": [
-        11
+        11,
+        17
       ],
       "id": 14
     },
@@ -529,6 +531,24 @@
         }
       ],
       "id": 16
+    },
+    {
+      "userId": 6,
+      "rating": null,
+      "categories": [
+        "Ease of Use"
+      ],
+      "comparison": [
+        {
+          "id": 12,
+          "text": "The girls on here rock"
+        },
+        {
+          "id": 14,
+          "text": "Bunch of babies"
+        }
+      ],
+      "id": 17
     }
   ],
   "users": [
@@ -551,6 +571,10 @@
     {
       "username": "Chana",
       "id": 5
+    },
+    {
+      "username": "Bobby",
+      "id": 6
     }
   ]
 }

@@ -5,15 +5,12 @@ import { Button, Header, Icon } from 'semantic-ui-react'
 const TitleAndHomeLink = (props) => {
     const history = useHistory()
     return (
-        <div>
+        <div style={{paddingBottom: '2%', backgroundColor: '#86BBD8'}}>
             <Header textAlign='center'>
                 <Header.Content>Program Wars</Header.Content>
             </Header>
-            <Button onCLick={() => history.push('/')}>
-                {/* <Button.Content hidden>Go Home</Button.Content>
-                <Button.Content visible> */}
-                    <Icon name='home' size='large'/>
-                {/* </Button.Content> */}
+            <Button onClick={() => history.push('/')}>
+                <Icon name='home' size='large'/>
             </Button>
         </div>
     )

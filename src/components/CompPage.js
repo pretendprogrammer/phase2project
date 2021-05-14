@@ -6,47 +6,45 @@ import NavBar from "./NavBar"
 
 class CompPage extends Component {
 
-    state = { activeItem: '' }
-
-    handleItemClick = (name) => this.setState({ activeItem: name })
-
     render() {
-        const { activeItem } = this.state
         return (
             <Grid>
                 <Grid.Column width={3}>
-                <Menu fluid vertical tabular>
+                <Menu color='grey' fluid vertical tabular>
                     <Menu.Item header as='h1'>Sort By</Menu.Item>
                     <Menu.Item 
+                        name='All'
+                        active={this.props.filter === ''}
+                        onClick={() => {
+                            this.props.setFilter('')
+                        }}
+                        />
+                    <Menu.Item 
                         name='Dating'
-                        active={activeItem === 'Dating'}
-                        onClick={(e, {name}) => {
+                        active={this.props.filter === 'Dating'}
+                        onClick={() => {
                             this.props.setFilter('Dating')
-                            this.handleItemClick(name)
                         }}
                         />
                     <Menu.Item 
                         name='Finance'
-                        active={activeItem === 'Finance'}
-                        onClick={(e, {name}) => {
+                        active={this.props.filter === 'Finance'}
+                        onClick={() => {
                             this.props.setFilter('Finance')
-                            this.handleItemClick(name)
                         }}
                         />
                     <Menu.Item 
                         name='Games'
-                        active={activeItem === 'Games'}
-                        onClick={(e, {name}) => {
+                        active={this.props.filter === 'Games'}
+                        onClick={() => {
                             this.props.setFilter('Games')
-                            this.handleItemClick(name)
                         }}
                         />
                     <Menu.Item 
                         name='Multimedia'
-                        active={activeItem === 'Multimedia'}
-                        onClick={(e, {name}) => {
+                        active={this.props.filter === 'Multimedia'}
+                        onClick={() => {
                             this.props.setFilter('Multimedia')
-                            this.handleItemClick(name)
                         }}
                         />
                 </Menu>

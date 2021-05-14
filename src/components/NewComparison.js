@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import InfoContainer from './InfoContainer'
-import { Card, Menu, Icon, Checkbox, Radio, Form, Message, Input, TextArea, Button, Select, Rating, FormGroup, Grid } from 'semantic-ui-react'
+import { Card, Menu, Icon, Checkbox, Radio, Form, Message, Input, TextArea, Button, Select, Rating, FormGroup, Grid, Segment } from 'semantic-ui-react'
 import CardContainer from './CardContainer'
 import { useHistory } from 'react-router'
 
@@ -15,8 +15,6 @@ const NewComparison = (props) => {
     const ratings = [ratingOne, ratingTwo]
 
     const history = useHistory()
-
-    const [activeItem, setActiveItem] = useState('')
 
     const createNewComparison = (event) => {
 
@@ -76,89 +74,98 @@ const NewComparison = (props) => {
     }
 
     return (
-        <Grid>
+        <Grid padded='vertically'>
             <Grid.Column width={3}>
-                <Menu fluid vertical tabular>
+                <Menu color='grey' fluid vertical tabular>
                     <Menu.Item header as='h1'>Sort By</Menu.Item>
                     <Menu.Item 
+                        name='All'
+                        active={props.filter === ''}
+                        onClick={() => {
+                            props.setFilter('')
+                        }}
+                        />
+                    <Menu.Item 
                         name='Dating'
-                        active={activeItem === 'Dating'}
-                        onClick={(e, {name}) => {
+                        active={props.filter === 'Dating'}
+                        onClick={() => {
                             props.setFilter('Dating')
-                            setActiveItem(name)
                         }}
                         />
                     <Menu.Item 
                         name='Finance'
-                        active={activeItem === 'Finance'}
-                        onClick={(e, {name}) => {
+                        active={props.filter === 'Finance'}
+                        onClick={() => {
                             props.setFilter('Finance')
-                            setActiveItem(name)
                         }}
                         />
                     <Menu.Item 
                         name='Games'
-                        active={activeItem === 'Games'}
-                        onClick={(e, {name}) => {
+                        active={props.filter === 'Games'}
+                        onClick={() => {
                             props.setFilter('Games')
-                            setActiveItem(name)
                         }}
                         />
                     <Menu.Item 
                         name='Multimedia'
-                        active={activeItem === 'Multimedia'}
-                        onClick={(e, {name}) => {
+                        active={props.filter === 'Multimedia'}
+                        onClick={() => {
                             props.setFilter('Multimedia')
-                            setActiveItem(name)
                         }}
                         />
                 </Menu>
             </Grid.Column>
-            <Grid.Column width={13}>    
-                <InfoContainer selectedPrograms={props.selectedPrograms}/>
-                    <Form onSubmit={createNewComparison}>
-                        <FormGroup style={{position: 'relative',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            }}>
-                            <Form.Field width={3} id="categories" label='Category of Review' control='select'>
-                                <option value='Ease of Use'>Ease of Use</option>
-                                <option value='Functionality'>Functionality</option>
-                                <option value='Reliability'>Reliability</option>
-                                <option value='Aesthetics'>Aesthetics</option>
-                            </Form.Field>
-                        </FormGroup>
-                        <Card.Group itemsPerRow={2}>
-                            <Card>
-                                <Form.Field
-                                    id='reviewOne'
-                                    control={TextArea}
-                                    placeholder={comPlaceholder}
-
-                                >
+            <Grid.Column width={13}>
+                <div style={{paddingTop: '2%'}}>   
+                    <InfoContainer selectedPrograms={props.selectedPrograms}/>
+                        <Form onSubmit={createNewComparison}>
+                            <FormGroup style={{position: 'relative',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                }}>
+                                <Form.Field width={3} id="categories" label='Category of Review' control='select'>
+                                    <option value='Ease of Use'>Ease of Use</option>
+                                    <option value='Functionality'>Functionality</option>
+                                    <option value='Reliability'>Reliability</option>
+                                    <option value='Aesthetics'>Aesthetics</option>
                                 </Form.Field>
-                                <Rating icon='star' defaultRating={0} maxRating={5} onRate={(e, {rating}) => setRatingOne(rating)} />
-                            </Card>
-                            <Card>
-                                <Form.Field
-                                        id='reviewTwo'
+                            </FormGroup>
+                            <Card.Group itemsPerRow={2}>
+                                <Card>
+                                    <Form.Field
+                                        id='reviewOne'
                                         control={TextArea}
                                         placeholder={comPlaceholder}
-                                        >
+
+                                    >
+                                    </Form.Field>
+                                    <Rating icon='star' defaultRating={0} maxRating={5} onRate={(e, {rating}) => setRatingOne(rating)} />
+                                </Card>
+                                <Card>
+                                    <Form.Field
+                                            id='reviewTwo'
+                                            control={TextArea}
+                                            placeholder={comPlaceholder}
+                                            >
+                                    </Form.Field>
+                                    <Rating icon='star' defaultRating={0} maxRating={5} onRate={(e, {rating}) => setRatingTwo(rating)} />
+                                </Card>
+                            </Card.Group>
+                            <Message
+                                success
+                                header='Review Completed'
+                                content='Your comparions-review has been succesfully submited. Thank you!'
+                                />
+                            <div style={{paddingTop: '1%'}}>
+                                <Form.Field control={Button}>
+                                    Submit
                                 </Form.Field>
-                                <Rating icon='star' defaultRating={0} maxRating={5} onRate={(e, {rating}) => setRatingTwo(rating)} />
-                            </Card>
-                        </Card.Group>
-                        <Message
-                            success
-                            header='Review Completed'
-                            content='Your comparions-review has been succesfully submited. Thank you!'
-                            />
-                        <Form.Field control={Button}>Submit</Form.Field>
-                    </Form>
-                <CardContainer
-                    programsList={props.programsList}
-                    addToSelectedPrograms={props.addToSelectedPrograms}/>
+                            </div>
+                        </Form>
+                    <CardContainer
+                        programsList={props.programsList}
+                        addToSelectedPrograms={props.addToSelectedPrograms}/>
+                </div>
             </Grid.Column>
         </Grid>
     )

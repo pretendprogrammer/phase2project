@@ -108,7 +108,8 @@ class App extends Component{
                                                 programsList={programsToDisplay}
                                                 addToSelectedPrograms={this.addToSelectedPrograms}
                                                 userId={this.state.userId}
-                                                setFilter={this.setFilter}/>
+                                                setFilter={this.setFilter}
+                                                filter={this.state.filter}/>
                                     </Route>
                                     <Route exact path='/logIn'>
                                           <LoginAndRegister setUser={this.setUser} />
