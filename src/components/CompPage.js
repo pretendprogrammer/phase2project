@@ -6,41 +6,61 @@ import NavBar from "./NavBar"
 
 class CompPage extends Component {
 
+    state = { activeItem: '' }
+
+    handleItemClick = (name) => this.setState({ activeItem: name })
+
     render() {
+        const { activeItem } = this.state
         return (
-            <div>
-                <Grid>
-                    <Grid.Column width={3}>
-                        <Menu fluid vertical tabular>
-                            <Menu.Item 
-                                name='Dating'
-                                onClick={() => this.props.setFilter('Dating')}
-                                />
-                            <Menu.Item 
-                                name='Finance'
-                                onClick={() => this.props.setFilter('Finance')}
-                                />
-                            <Menu.Item 
-                                name='Games'
-                                onClick={() => this.props.setFilter('Games')}
-                                />
-                            <Menu.Item 
-                                name='Multimedia'
-                                onClick={() => this.props.setFilter('Multimedia')}
-                                />
-                        </Menu>
-                    </Grid.Column>
-                    <Grid.Column width={13}>
-                        <Segment>
-                            <NavBar clearSelections={this.props.clearSelections} setURLPath={this.props.setURLPath} setUser={this.props.setUser} username={this.props.username}/>
-                        </Segment>
-                        <ExpandedInfo selectedPrograms={this.props.selectedPrograms}/>
-                        <Segment>
-                            <CardContainer addToSelectedPrograms={this.props.addToSelectedPrograms} programsList={this.props.programsList}/>
-                        </Segment>
-                    </Grid.Column>
-                </Grid>
-            </div>
+            <Grid>
+                <Grid.Column width={3}>
+                <Menu fluid vertical tabular>
+                    <Menu.Item header as='h1'>Sort By</Menu.Item>
+                    <Menu.Item 
+                        name='Dating'
+                        active={activeItem === 'Dating'}
+                        onClick={(e, {name}) => {
+                            this.props.setFilter('Dating')
+                            this.handleItemClick(name)
+                        }}
+                        />
+                    <Menu.Item 
+                        name='Finance'
+                        active={activeItem === 'Finance'}
+                        onClick={(e, {name}) => {
+                            this.props.setFilter('Finance')
+                            this.handleItemClick(name)
+                        }}
+                        />
+                    <Menu.Item 
+                        name='Games'
+                        active={activeItem === 'Games'}
+                        onClick={(e, {name}) => {
+                            this.props.setFilter('Games')
+                            this.handleItemClick(name)
+                        }}
+                        />
+                    <Menu.Item 
+                        name='Multimedia'
+                        active={activeItem === 'Multimedia'}
+                        onClick={(e, {name}) => {
+                            this.props.setFilter('Multimedia')
+                            this.handleItemClick(name)
+                        }}
+                        />
+                </Menu>
+                </Grid.Column>
+                <Grid.Column width={13}>
+                    <Segment>
+                        <NavBar clearSelections={this.props.clearSelections} setURLPath={this.props.setURLPath} setUser={this.props.setUser} username={this.props.username}/>
+                    </Segment>
+                    <ExpandedInfo selectedPrograms={this.props.selectedPrograms}/>
+                    <Segment>
+                        <CardContainer addToSelectedPrograms={this.props.addToSelectedPrograms} programsList={this.props.programsList}/>
+                    </Segment>
+                </Grid.Column>
+            </Grid>
         )
     }
 }

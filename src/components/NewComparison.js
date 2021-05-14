@@ -16,6 +16,8 @@ const NewComparison = (props) => {
 
     const history = useHistory()
 
+    const [activeItem, setActiveItem] = useState('')
+
     const createNewComparison = (event) => {
 
         let categories = event.target.categories.value
@@ -77,25 +79,38 @@ const NewComparison = (props) => {
         <Grid>
             <Grid.Column width={3}>
                 <Menu fluid vertical tabular>
-                    <Menu.Item 
-                        name='All'
-                        onClick={() => props.setFilter('')}
-                        />
+                    <Menu.Item header as='h1'>Sort By</Menu.Item>
                     <Menu.Item 
                         name='Dating'
-                        onClick={() => props.setFilter('Dating')}
+                        active={activeItem === 'Dating'}
+                        onClick={(e, {name}) => {
+                            props.setFilter('Dating')
+                            setActiveItem(name)
+                        }}
                         />
                     <Menu.Item 
                         name='Finance'
-                        onClick={() => props.setFilter('Finance')}
+                        active={activeItem === 'Finance'}
+                        onClick={(e, {name}) => {
+                            props.setFilter('Finance')
+                            setActiveItem(name)
+                        }}
                         />
                     <Menu.Item 
                         name='Games'
-                        onClick={() => props.setFilter('Games')}
+                        active={activeItem === 'Games'}
+                        onClick={(e, {name}) => {
+                            props.setFilter('Games')
+                            setActiveItem(name)
+                        }}
                         />
                     <Menu.Item 
                         name='Multimedia'
-                        onClick={() => props.setFilter('Multimedia')}
+                        active={activeItem === 'Multimedia'}
+                        onClick={(e, {name}) => {
+                            props.setFilter('Multimedia')
+                            setActiveItem(name)
+                        }}
                         />
                 </Menu>
             </Grid.Column>

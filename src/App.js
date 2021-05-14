@@ -5,6 +5,7 @@ import CompPage from './components/CompPage'
 import NewProgram from './components/NewProgram'
 import NewComparison from './components/NewComparison'
 import LoginAndRegister from './components/LoginAndRegister';
+import TitleAndHomeLink from './components/TitleAndHomeLink';
 
 const API = 'http://localhost:3000/'
 
@@ -80,6 +81,9 @@ class App extends Component{
             return (
                   <Router>
                         <div className='App'>
+                              <Route path='/'>
+                                    <TitleAndHomeLink />
+                              </Route>
                               <Switch>
                                     <Route exact path='/'>
                                           <CompPage
