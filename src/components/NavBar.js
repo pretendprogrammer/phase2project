@@ -12,13 +12,13 @@ const NavBar = (props) => {
     return (
         <div style={{paddingBottom: '1%' }}>
             <Menu>
-                    <select onChange={(e) => props.setFilter(e.target.value)}>
+                    {/* <select onChange={(e) => props.setFilter(e.target.value)}>
                         <option value="">No Filter</option>
                         <option value="Dating">Dating</option>
                         <option value="Games">Games</option>
                         <option value="Multimedia">Multimedia</option>
                         <option value="Finance">Finance</option>
-                    </select>
+                    </select> */}
                 
                 <Menu.Item
                     name='addProgramButton'

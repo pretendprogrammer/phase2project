@@ -37,6 +37,7 @@ class App extends Component{
 
       setFilter = (filterSelected) => {
             this.setState({filter: filterSelected})
+
       }
       
       // THIS FUNCTION IS PASSED DOWN TO EACH PROGRAM CARD TO ADD IT TO THE STATE IN THIS SCOPE
@@ -100,7 +101,8 @@ class App extends Component{
                                                 selectedPrograms={this.state.selectedPrograms}
                                                 programsList={programsToDisplay}
                                                 addToSelectedPrograms={this.addToSelectedPrograms}
-                                                userId={this.state.userId}/>
+                                                userId={this.state.userId}
+                                                setFilter={this.setFilter}/>
                                     </Route>
                                     <Route exact path='/logIn'>
                                           <LoginAndRegister setUser={this.setUser} />
