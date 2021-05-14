@@ -66,6 +66,7 @@ class App extends Component{
                   programsToDisplay = this.state.programsList
             }
             programsToDisplay = programsToDisplay.filter(programObject => !this.state.selectedPrograms.includes(programObject))
+            .sort((programObject1, programObject2) => programObject2.rating - programObject1.rating)
             return programsToDisplay
       }
 
@@ -97,7 +98,7 @@ class App extends Component{
                                           <NewComparison
                                                 fetchProgramsList={this.fetchProgramsList}
                                                 selectedPrograms={this.state.selectedPrograms}
-                                                programsList={this.state.programsList}
+                                                programsList={programsToDisplay}
                                                 addToSelectedPrograms={this.addToSelectedPrograms}
                                                 userId={this.state.userId}/>
                                     </Route>

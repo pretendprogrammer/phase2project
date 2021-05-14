@@ -19,12 +19,14 @@ const NavBar = (props) => {
                 </select>
             
             <Menu.Item
+                disabled={props.username === ''}
                 name='addProgramButton'
                 onClick={() => history.push("/addNewProgram")}
             >
                 Add Program
             </Menu.Item>
             <Menu.Item
+                disabled={props.username === ''}
                 name='addComparisonButton'
                 onClick={() => history.push("/addNewComparison")}
             >
