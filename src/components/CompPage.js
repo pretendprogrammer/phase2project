@@ -13,10 +13,6 @@ class CompPage extends Component {
                     <Grid.Column width={3}>
                         <Menu fluid vertical tabular>
                             <Menu.Item 
-                                name='All'
-                                onClick={() => this.props.setFilter('')}
-                                />
-                            <Menu.Item 
                                 name='Dating'
                                 onClick={() => this.props.setFilter('Dating')}
                                 />

@@ -37,7 +37,9 @@ class App extends Component{
 
       setFilter = (filterSelected) => {
             this.setState({filter: filterSelected})
-
+            if (this.state.selectedPrograms.length > 0 && this.state.selectedPrograms[0].programCategories[0] !== filterSelected) {
+                  this.setState({selectedPrograms: []})
+            }
       }
       
       // THIS FUNCTION IS PASSED DOWN TO EACH PROGRAM CARD TO ADD IT TO THE STATE IN THIS SCOPE
