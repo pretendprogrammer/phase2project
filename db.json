@@ -124,9 +124,11 @@
       "programCategories": [
         "Finance"
       ],
-      "rating": 4,
+      "rating": 1.6666666666666667,
       "comparisonsRef": [
-        12
+        12,
+        19,
+        21
       ],
       "id": 8
     },
@@ -182,10 +184,11 @@
       "programCategories": [
         "Dating"
       ],
-      "rating": 5,
+      "rating": 2,
       "comparisonsRef": [
         13,
-        17
+        17,
+        18
       ],
       "id": 12
     },
@@ -209,10 +212,11 @@
       "programCategories": [
         "Dating"
       ],
-      "rating": 3,
+      "rating": 2.3333333333333335,
       "comparisonsRef": [
         11,
-        17
+        17,
+        18
       ],
       "id": 14
     },
@@ -241,6 +245,49 @@
       "rating": 0,
       "comparisonsRef": [],
       "id": 16
+    },
+    {
+      "title": "Cash app",
+      "image": "https://play-lh.googleusercontent.com/6RcPDQwPihY591Axu7e6mHhMZ22Q-dqeI5z9GkJiu4Hc-Xha77E6uoeplstYuv5RcnE=s180-rw",
+      "developer": "Square, Inc",
+      "description": "Cash App is the easiest way to send, spend and save.",
+      "programCategories": [
+        "Finance"
+      ],
+      "rating": 4.5,
+      "comparisonsRef": [
+        19,
+        20
+      ],
+      "id": 17
+    },
+    {
+      "title": "Venmo",
+      "image": "https://play-lh.googleusercontent.com/YAKMX5YFcuE8_NogkbM7gkqrhBY6CUefbpULAVnNZLSitbo9S3Dw2FIYNqhW0d5G94Y=s180-rw",
+      "developer": "PayPal, Inc",
+      "description": "Spread money around",
+      "programCategories": [
+        "Finance"
+      ],
+      "rating": 1,
+      "comparisonsRef": [
+        20
+      ],
+      "id": 18
+    },
+    {
+      "title": "Zelle",
+      "image": "https://play-lh.googleusercontent.com/F4U2pL8z-Ic5FzCfe1xVXMWRvff6oEBIzDsyGRc4mE3bIUPiCfhuXXXvTOfcpVglKqs=s180-rw",
+      "developer": "Early Warning Services",
+      "description": "Finance",
+      "programCategories": [
+        "Finance"
+      ],
+      "rating": 5,
+      "comparisonsRef": [
+        21
+      ],
+      "id": 19
     }
   ],
   "comparisons": [
@@ -549,6 +596,78 @@
         }
       ],
       "id": 17
+    },
+    {
+      "userId": 1,
+      "rating": null,
+      "categories": [
+        "Ease of Use"
+      ],
+      "comparison": [
+        {
+          "id": 14,
+          "text": "Love them christian girls"
+        },
+        {
+          "id": 12,
+          "text": "too much veggies"
+        }
+      ],
+      "id": 18
+    },
+    {
+      "userId": 1,
+      "rating": null,
+      "categories": [
+        "Ease of Use"
+      ],
+      "comparison": [
+        {
+          "id": 17,
+          "text": "Cash App is the best"
+        },
+        {
+          "id": 8,
+          "text": "Stash what?"
+        }
+      ],
+      "id": 19
+    },
+    {
+      "userId": 1,
+      "rating": null,
+      "categories": [
+        "Ease of Use"
+      ],
+      "comparison": [
+        {
+          "id": 17,
+          "text": "No Good"
+        },
+        {
+          "id": 18,
+          "text": "Great"
+        }
+      ],
+      "id": 20
+    },
+    {
+      "userId": 1,
+      "rating": null,
+      "categories": [
+        "Ease of Use"
+      ],
+      "comparison": [
+        {
+          "id": 19,
+          "text": "This is great"
+        },
+        {
+          "id": 8,
+          "text": "bad"
+        }
+      ],
+      "id": 21
     }
   ],
   "users": [
@@ -575,6 +694,14 @@
     {
       "username": "Bobby",
       "id": 6
+    },
+    {
+      "username": "Joe Momma",
+      "id": 7
+    },
+    {
+      "username": "Nick Cat",
+      "id": 8
     }
   ]
 }

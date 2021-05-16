@@ -9,7 +9,10 @@ const TitleAndHomeLink = (props) => {
             <Header textAlign='center'>
                 <Header.Content>Program Wars</Header.Content>
             </Header>
-            <Button onClick={() => history.push('/')}>
+            <Button onClick={() => {
+                props.clearSelections()
+                history.push('/')
+                }}>
                 <Icon name='home' size='large'/>
             </Button>
         </div>

@@ -82,7 +82,7 @@ class App extends Component{
                   <Router>
                         <div className='App'>
                               <Route path='/'>
-                                    <TitleAndHomeLink />
+                                    <TitleAndHomeLink clearSelections={this.clearSelections} />
                               </Route>
                               <Switch>
                                     <Route exact path='/'>
@@ -99,7 +99,7 @@ class App extends Component{
                                                 clearSelections={this.clearSelections}/>
                                     </Route>
                                     <Route exact path='/addNewProgram'>
-                                          <NewProgram addToProgramsList={this.addToProgramsList}/>
+                                          <NewProgram userId={this.state.userId} addToProgramsList={this.addToProgramsList}/>
                                     </Route>
                                     <Route exact path='/addNewComparison'>
                                           <NewComparison

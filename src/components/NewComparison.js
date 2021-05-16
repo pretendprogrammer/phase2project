@@ -8,13 +8,15 @@ const comPlaceholder = `What does this program have that the other doesn't?`
 const API = 'http://localhost:3000/'
 
 const NewComparison = (props) => {
-
     const [ratingOne, setRatingOne] = useState(1)
     const [ratingTwo, setRatingTwo] = useState(1)
-
     const ratings = [ratingOne, ratingTwo]
-
     const history = useHistory()
+
+    if (!props.userId) {
+        history.push('/')
+    }
+
 
     const createNewComparison = (event) => {
 
