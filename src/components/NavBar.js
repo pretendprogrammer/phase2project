@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { Menu, Message } from 'semantic-ui-react'
-import ReactDOM from 'react-dom';
-/* Add NavLink to importer */
-import { BrowserRouter as Router, Route, NavLink, Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const NavBar = (props) => {
 
@@ -12,14 +10,6 @@ const NavBar = (props) => {
     return (
         <div style={{paddingBottom: '1%' }}>
             <Menu>
-                    {/* <select onChange={(e) => props.setFilter(e.target.value)}>
-                        <option value="">No Filter</option>
-                        <option value="Dating">Dating</option>
-                        <option value="Games">Games</option>
-                        <option value="Multimedia">Multimedia</option>
-                        <option value="Finance">Finance</option>
-                    </select> */}
-                
                 <Menu.Item
                     name='addProgramButton'
                     onClick={() => {
@@ -62,26 +52,6 @@ const NavBar = (props) => {
         </div>
     )
 }
-
-// const link = {
-//     width: '100px',
-//     padding: '12px',
-//     margin: '0 6px 6px',
-//     background: 'blue',
-//     textDecoration: 'none',
-//     color: 'white',
-//   }
-  
-
-//   <NavLink
-// to="/newComparison"
-// exact
-// style={link}
-// activeStyle={{
-//     background: 'darkblue'
-// }}
-// >Add Comparison
-// </NavLink>
 
 
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import InfoContainer from './InfoContainer'
-import { Card, Menu, Icon, Checkbox, Radio, Form, Message, Input, TextArea, Button, Select, Rating, FormGroup, Grid, Segment } from 'semantic-ui-react'
+import { Card, Menu, Form, Message, TextArea, Button, Rating, FormGroup, Grid } from 'semantic-ui-react'
 import CardContainer from './CardContainer'
 import { useHistory } from 'react-router'
 

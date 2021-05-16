@@ -1,6 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router'
-import { Form, Input, TextArea, Button, Select } from 'semantic-ui-react'
+import { Form, Input, TextArea, Button } from 'semantic-ui-react'
 
 const NewProgram = (props) => {
     const API = 'http://localhost:3000/programs'
