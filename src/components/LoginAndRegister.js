@@ -2,9 +2,6 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router'
 import { Form, Button, Segment, Header, Divider, Grid, Message } from 'semantic-ui-react'
 
-const API = 'http://localhost:3000/users'
-
-
 const LoginAndRegister = (props) => {
     
     const [badLogin, setBadLogin] = useState(false)
@@ -14,7 +11,7 @@ const LoginAndRegister = (props) => {
 
     const checkIfUserExists = (userString) => {
 
-        return fetch(API)
+        return fetch(props.API+'users')
             .then(r => r.json())
             .then(fetchedArray => {
                 foundUserObject = fetchedArray.find(userObject => userObject.username === userString)
@@ -48,7 +45,7 @@ const LoginAndRegister = (props) => {
                     },
                     body: JSON.stringify(newUserObject),
                   }
-                fetch(API, postConfig)
+                fetch(props.API+'users', postConfig)
                   .then(r => r.json())
                   .then(postedUserObject => {
                       props.setUser(postedUserObject)

@@ -5,7 +5,7 @@ import React from 'react'
 const ExpandedInfo = (props) => (
     <div>
         <InfoContainer selectedPrograms={props.selectedPrograms}/>
-        {props.selectedPrograms.length > 1 ? <CompContainer selectedPrograms={props.selectedPrograms}/> : null}
+        {props.selectedPrograms.length > 1 ? <CompContainer API={props.API} selectedPrograms={props.selectedPrograms}/> : null}
     </div>
 )
 

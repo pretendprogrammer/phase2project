@@ -3,7 +3,6 @@ import { useHistory } from 'react-router'
 import { Form, Input, TextArea, Button } from 'semantic-ui-react'
 
 const NewProgram = (props) => {
-    const API = 'http://localhost:3000/programs'
     const history = useHistory()
 
     if (!props.userId) {
@@ -40,7 +39,7 @@ const NewProgram = (props) => {
             body: JSON.stringify(newObject)
         }
 
-        fetch(API, postConfig)
+        fetch(props.API+'programs', postConfig)
             .then(r => r.json())
             .then(newProgramObject => {
                 props.addToProgramsList(newProgramObject)

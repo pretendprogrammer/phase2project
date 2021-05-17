@@ -5,7 +5,6 @@ import CardContainer from './CardContainer'
 import { useHistory } from 'react-router'
 
 const comPlaceholder = `What does this program have that the other doesn't?`
-const API = 'http://localhost:3000/'
 
 const NewComparison = (props) => {
     const [ratingOne, setRatingOne] = useState(1)
@@ -52,7 +51,7 @@ const NewComparison = (props) => {
             body: JSON.stringify(newObject)
         }
     
-        fetch(API+'comparisons', postConfig)
+        fetch(props.API+'comparisons', postConfig)
         .then(r => r.json())
         .then(newCompObject => {
             props.selectedPrograms.forEach((programObject, index) => {
@@ -66,7 +65,7 @@ const NewComparison = (props) => {
                     body: JSON.stringify({comparisonsRef: programObject.comparisonsRef, rating: programObject.rating})
                 }
 
-                fetch(API+'programs/'+programObject.id, patchConfig)
+                fetch(props.API+'programs/'+programObject.id, patchConfig)
                 .then(r => r.json())
                 .then(() => null)
             })

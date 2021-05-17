@@ -4,21 +4,20 @@ import Comparisons from './Comparisons'
 
 const CompContainer = (props) => {
 
-    const API = 'http://localhost:3000/'
     const [compsToDisplay, setCompsToDisplay] = useState([])
     let matchedComparisonIds = []
 
     const [usersArray, setUsersArray] = useState([])
 
     useEffect(() => {
-        fetch(API+'users')
+        fetch(props.API+'users')
         .then(r => r.json())
         .then(fetchedUsersArray => {setUsersArray(fetchedUsersArray)})
     }, [props.selectedPrograms])
 
     useEffect(() => {
         if (matchedComparisonIds.length > 0) {
-            fetch(API+'comparisons')
+            fetch(props.API+'comparisons')
             .then(r => r.json())
             .then(result => {
                 result = result.filter(compObject => matchedComparisonIds.some(id => id === compObject.id))

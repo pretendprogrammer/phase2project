@@ -7,7 +7,7 @@ import NewComparison from './components/NewComparison'
 import LoginAndRegister from './components/LoginAndRegister';
 import TitleAndHomeLink from './components/TitleAndHomeLink';
 
-const API = 'http://localhost:3000/'
+const API = 'https://safe-bayou-25930.herokuapp.com/'
 
 class App extends Component{
       state = {
@@ -96,10 +96,11 @@ class App extends Component{
                                                 addToSelectedPrograms={this.addToSelectedPrograms}
                                                 setFilter={this.setFilter}
                                                 setUser={this.setUser}
-                                                clearSelections={this.clearSelections}/>
+                                                clearSelections={this.clearSelections}
+                                                API={API}/>
                                     </Route>
                                     <Route exact path='/addNewProgram'>
-                                          <NewProgram userId={this.state.userId} addToProgramsList={this.addToProgramsList}/>
+                                          <NewProgram API={API} userId={this.state.userId} addToProgramsList={this.addToProgramsList}/>
                                     </Route>
                                     <Route exact path='/addNewComparison'>
                                           <NewComparison
@@ -109,10 +110,11 @@ class App extends Component{
                                                 addToSelectedPrograms={this.addToSelectedPrograms}
                                                 userId={this.state.userId}
                                                 setFilter={this.setFilter}
-                                                filter={this.state.filter}/>
+                                                filter={this.state.filter}
+                                                API={API}/>
                                     </Route>
                                     <Route exact path='/logIn'>
-                                          <LoginAndRegister setUser={this.setUser} />
+                                          <LoginAndRegister setUser={this.setUser} API={API}/>
                                     </Route>
                               </Switch>
                         </div>

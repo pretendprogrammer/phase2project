@@ -53,7 +53,7 @@ class CompPage extends Component {
                     <Segment>
                         <NavBar clearSelections={this.props.clearSelections} setURLPath={this.props.setURLPath} setUser={this.props.setUser} username={this.props.username}/>
                     </Segment>
-                    <ExpandedInfo selectedPrograms={this.props.selectedPrograms}/>
+                    <ExpandedInfo API={this.props.API} selectedPrograms={this.props.selectedPrograms}/>
                     <Segment>
                         <CardContainer addToSelectedPrograms={this.props.addToSelectedPrograms} programsList={this.props.programsList}/>
                     </Segment>
