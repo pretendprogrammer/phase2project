@@ -1,5 +1,5 @@
 import { Component } from "react"
-import { Grid, Menu, Segment } from "semantic-ui-react"
+import { Grid, Segment } from "semantic-ui-react"
 import CardContainer from './CardContainer'
 import ExpandedInfo from "./ExpandedInfo"
 import NavBar from "./NavBar"
