@@ -69,6 +69,7 @@ const NewProgram = (props) => {
                     <option value='Games'>Games</option>
                     <option value='Multimedia'>Multimedia</option>
                     <option value='Finance'>Finance</option>
+                    <option value='Communication'>Communication</option>
                  </Form.Field>
             </Form.Group>
             <Form.Field
