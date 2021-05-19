@@ -7,7 +7,7 @@ import NewComparison from './components/NewComparison'
 import LoginAndRegister from './components/LoginAndRegister';
 import TitleAndHomeLink from './components/TitleAndHomeLink';
 
-const API = 'https://safe-bayou-25930.herokuapp.com/'
+const API = 'https://program-wars.herokuapp.com/'
 
 class App extends Component{
       state = {
